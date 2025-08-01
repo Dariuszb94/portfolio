@@ -3,3 +3,6 @@ body {
   margin: 0;
   font-family: 'Roboto', Arial, sans-serif;
 }
+span {
+  font-size: 1.2em;
+}
