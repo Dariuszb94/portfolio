@@ -16,12 +16,12 @@ function App() {
         onInit={(typewriter) => {
           typewriter
             .typeString(
-              '<h2>I build web apps with clean code and creative design. My focus is innovative solutions and smooth performance.</h2>'
+              '<h2>I build web apps with clean code and creative design, focusing on performance and innovation.</h2>'
             )
-            .pauseFor(1000)
+            .pauseFor(500)
             .deleteAll()
             .typeString(
-              "<h2>I just make nice things for the web. Let's create something amazing and push what's possible online! 🚀 </h2>"
+              "<h2>I just make nice things for the web. Let's create something amazing!</h2>"
             )
             .start();
         }}
