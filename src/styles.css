@@ -13,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0f0f23;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   overflow-x: hidden;
 }
 

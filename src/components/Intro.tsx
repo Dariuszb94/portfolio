@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
-import ParticlesBackground from './ParticlesBackground';
+import { lazy, Suspense } from 'react';
+import ErrorBoundary from './ErrorBoundary';
+
+// Lazy load the ParticlesBackground component to reduce initial bundle size
+const ParticlesBackground = lazy(() => import('./ParticlesBackground'));
 
 const Container = styled.div`
   min-height: 100vh;
@@ -45,7 +49,24 @@ const Subtitle = styled.p`
 function Intro() {
   return (
     <Container>
-      <ParticlesBackground />
+      <ErrorBoundary>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
+              }}
+            />
+          }
+        >
+          <ParticlesBackground />
+        </Suspense>
+      </ErrorBoundary>
       <Title>Dariusz Berer</Title>
       <Subtitle>Frontend Developer</Subtitle>
       <TypewriterContainer>

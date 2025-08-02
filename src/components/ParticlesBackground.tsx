@@ -94,7 +94,8 @@ function CodeOctahedron({ position }: { position: [number, number, number] }) {
 function Scene() {
   const cubes = useMemo(
     () =>
-      Array.from({ length: 4 }, () => ({
+      Array.from({ length: 2 }, () => ({
+        // Reduced from 4 to 2
         position: [
           (Math.random() - 0.5) * 10,
           (Math.random() - 0.5) * 8,
@@ -107,7 +108,8 @@ function Scene() {
 
   const spheres = useMemo(
     () =>
-      Array.from({ length: 6 }, () => ({
+      Array.from({ length: 3 }, () => ({
+        // Reduced from 6 to 3
         position: [
           (Math.random() - 0.5) * 12,
           (Math.random() - 0.5) * 10,
@@ -119,7 +121,8 @@ function Scene() {
 
   const octahedrons = useMemo(
     () =>
-      Array.from({ length: 3 }, () => ({
+      Array.from({ length: 2 }, () => ({
+        // Reduced from 3 to 2
         position: [
           (Math.random() - 0.5) * 14,
           (Math.random() - 0.5) * 12,
@@ -178,10 +181,14 @@ const ParticlesBackground = () => {
           far: 1000,
         }}
         gl={{
-          antialias: true,
+          antialias: false, // Disable antialias for better performance
           alpha: true,
           powerPreference: 'high-performance',
+          stencil: false,
+          depth: false,
         }}
+        dpr={Math.min(window.devicePixelRatio, 2)} // Limit pixel ratio for performance
+        performance={{ min: 0.5 }} // Enable automatic performance scaling
       >
         <Scene />
       </Canvas>
