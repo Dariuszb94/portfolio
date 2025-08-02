@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
+import ParticlesBackground from './ParticlesBackground';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -7,11 +8,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 24px;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: white;
+  position: relative;
 `;
 
 const Title = styled.h1`
@@ -50,6 +51,7 @@ const Subtitle = styled.p`
 function Intro() {
   return (
     <Container>
+      <ParticlesBackground />
       <Title>Dariusz Berer</Title>
       <Subtitle>Frontend Developer</Subtitle>
       <TypewriterContainer>
