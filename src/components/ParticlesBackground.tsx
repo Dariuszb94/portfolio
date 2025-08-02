@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, OrbitControls } from '@react-three/drei';
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, memo } from 'react';
 import * as THREE from 'three';
 import styled from 'styled-components';
 
@@ -14,8 +14,8 @@ const CanvasContainer = styled.div`
   z-index: -1;
 `;
 
-// Floating code cube component
-function CodeCube({
+// Floating code cube component - Memoized for performance
+const CodeCube = memo(function CodeCube({
   position,
   rotationSpeed,
 }: {
@@ -46,10 +46,10 @@ function CodeCube({
       </mesh>
     </Float>
   );
-}
+});
 
-// Floating geometric shapes
-function CodeSphere({ position }: { position: [number, number, number] }) {
+// Floating geometric shapes - Memoized for performance
+const CodeSphere = memo(function CodeSphere({ position }: { position: [number, number, number] }) {
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
@@ -63,14 +63,14 @@ function CodeSphere({ position }: { position: [number, number, number] }) {
 
   return (
     <mesh ref={meshRef} position={position}>
-      <sphereGeometry args={[0.2, 12, 12]} />
+      <sphereGeometry args={[0.2, 8, 8]} />
       <meshBasicMaterial color='#82aaff' transparent opacity={0.2} wireframe />
     </mesh>
   );
-}
+});
 
-// Octahedron shapes
-function CodeOctahedron({ position }: { position: [number, number, number] }) {
+// Octahedron shapes - Memoized for performance
+const CodeOctahedron = memo(function CodeOctahedron({ position }: { position: [number, number, number] }) {
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
@@ -88,14 +88,13 @@ function CodeOctahedron({ position }: { position: [number, number, number] }) {
       <meshBasicMaterial color='#c792ea' transparent opacity={0.25} wireframe />
     </mesh>
   );
-}
+});
 
-// Main 3D scene
-function Scene() {
+// Main 3D scene - Optimized for performance
+const Scene = memo(function Scene() {
   const cubes = useMemo(
     () =>
       Array.from({ length: 2 }, () => ({
-        // Reduced from 4 to 2
         position: [
           (Math.random() - 0.5) * 10,
           (Math.random() - 0.5) * 8,
@@ -108,8 +107,8 @@ function Scene() {
 
   const spheres = useMemo(
     () =>
-      Array.from({ length: 3 }, () => ({
-        // Reduced from 6 to 3
+      Array.from({ length: 2 }, () => ({
+        // Reduced from 3 to 2
         position: [
           (Math.random() - 0.5) * 12,
           (Math.random() - 0.5) * 10,
@@ -121,8 +120,8 @@ function Scene() {
 
   const octahedrons = useMemo(
     () =>
-      Array.from({ length: 2 }, () => ({
-        // Reduced from 3 to 2
+      Array.from({ length: 1 }, () => ({
+        // Reduced from 2 to 1
         position: [
           (Math.random() - 0.5) * 14,
           (Math.random() - 0.5) * 12,
@@ -136,7 +135,6 @@ function Scene() {
     <>
       <ambientLight intensity={0.3} />
       <pointLight position={[10, 10, 10]} intensity={0.5} />
-      <pointLight position={[-10, -10, -10]} intensity={0.2} color='#64ffda' />
 
       {/* Floating code cubes */}
       {cubes.map((cube, index) => (
@@ -162,38 +160,50 @@ function Scene() {
         enableZoom={false}
         enablePan={false}
         autoRotate
-        autoRotateSpeed={0.2}
+        autoRotateSpeed={0.1}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
       />
     </>
   );
-}
+});
 
-const ParticlesBackground = () => {
+const ParticlesBackground = memo(function ParticlesBackground() {
+  // Performance optimization: only render on devices with sufficient capability
+  const shouldRender = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    return gl !== null && window.devicePixelRatio <= 2;
+  }, []);
+
+  if (!shouldRender) {
+    return null; // Skip 3D rendering on low-end devices
+  }
+
   return (
     <CanvasContainer>
       <Canvas
         camera={{
           position: [0, 0, 8],
-          fov: 50,
+          fov: 45, // Reduced FOV for better performance
           near: 0.1,
-          far: 1000,
+          far: 50, // Reduced far plane
         }}
         gl={{
-          antialias: false, // Disable antialias for better performance
+          antialias: false,
           alpha: true,
           powerPreference: 'high-performance',
           stencil: false,
           depth: false,
         }}
-        dpr={Math.min(window.devicePixelRatio, 2)} // Limit pixel ratio for performance
-        performance={{ min: 0.5 }} // Enable automatic performance scaling
+        dpr={1} // Fixed pixel ratio for consistent performance
+        performance={{ min: 0.5 }}
+        frameloop='demand' // Only render when needed
       >
         <Scene />
       </Canvas>
     </CanvasContainer>
   );
-};
+});
 
 export default ParticlesBackground;

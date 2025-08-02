@@ -1,25 +1,27 @@
-/* General styles for the portfolio app */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Additional optimized styles for the portfolio app */
+/* Core styles are now inlined in index.html for critical rendering path */
 
+/* Performance optimizations */
 body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  overflow-x: hidden;
+  will-change: auto;
+  contain: layout style paint;
 }
 
-#root {
-  width: 100%;
-  min-height: 100vh;
+/* Smooth animations with GPU acceleration */
+* {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
-span {
-  font-size: inherit;
+/* Optimized text rendering */
+h1, h2, h3, p, span {
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+}
+
+/* Reduce paint operations */
+img, video, canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
 }
