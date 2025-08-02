@@ -102,7 +102,7 @@ const CodeOctahedron = memo(function CodeOctahedron({
 const Scene = memo(function Scene() {
   const cubes = useMemo(
     () =>
-      Array.from({ length: 2 }, () => ({
+      Array.from({ length: 4 }, () => ({
         position: [
           (Math.random() - 0.5) * 10,
           (Math.random() - 0.5) * 8,
@@ -115,7 +115,7 @@ const Scene = memo(function Scene() {
 
   const spheres = useMemo(
     () =>
-      Array.from({ length: 2 }, () => ({
+      Array.from({ length: 5 }, () => ({
         // Reduced from 3 to 2
         position: [
           (Math.random() - 0.5) * 12,
@@ -128,8 +128,7 @@ const Scene = memo(function Scene() {
 
   const octahedrons = useMemo(
     () =>
-      Array.from({ length: 1 }, () => ({
-        // Reduced from 2 to 1
+      Array.from({ length: 2 }, () => ({
         position: [
           (Math.random() - 0.5) * 14,
           (Math.random() - 0.5) * 12,
@@ -177,18 +176,6 @@ const Scene = memo(function Scene() {
 });
 
 const ParticlesBackground = memo(function ParticlesBackground() {
-  // Performance optimization: only render on devices with sufficient capability
-  const shouldRender = useMemo(() => {
-    const canvas = document.createElement('canvas');
-    const gl =
-      canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-    return gl !== null && window.devicePixelRatio <= 2;
-  }, []);
-
-  if (!shouldRender) {
-    return null; // Skip 3D rendering on low-end devices
-  }
-
   return (
     <CanvasContainer>
       <Canvas
