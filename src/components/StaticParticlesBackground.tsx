@@ -32,28 +32,33 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const FloatingElement = styled.div<{ delay: number; size: number; left: number; top: number }>`
+const FloatingElement = styled.div<{
+  delay: number;
+  size: number;
+  left: number;
+  top: number;
+}>`
   position: absolute;
-  left: ${props => props.left}%;
-  top: ${props => props.top}%;
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
+  left: ${(props) => props.left}%;
+  top: ${(props) => props.top}%;
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
   border: 1px solid rgba(100, 255, 218, 0.2);
   border-radius: 50%;
-  animation: ${float} ${props => 3 + props.delay}s ease-in-out infinite;
-  animation-delay: ${props => props.delay}s;
+  animation: ${float} ${(props) => 3 + props.delay}s ease-in-out infinite;
+  animation-delay: ${(props) => props.delay}s;
   opacity: 0.6;
 `;
 
 const CodeSymbol = styled.div<{ delay: number; left: number; top: number }>`
   position: absolute;
-  left: ${props => props.left}%;
-  top: ${props => props.top}%;
+  left: ${(props) => props.left}%;
+  top: ${(props) => props.top}%;
   color: rgba(130, 170, 255, 0.3);
   font-size: 24px;
   font-family: 'Courier New', monospace;
-  animation: ${float} ${props => 4 + props.delay}s ease-in-out infinite;
-  animation-delay: ${props => props.delay}s;
+  animation: ${float} ${(props) => 4 + props.delay}s ease-in-out infinite;
+  animation-delay: ${(props) => props.delay}s;
   user-select: none;
 `;
 

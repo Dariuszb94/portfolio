@@ -49,7 +49,11 @@ const CodeCube = memo(function CodeCube({
 });
 
 // Floating geometric shapes - Memoized for performance
-const CodeSphere = memo(function CodeSphere({ position }: { position: [number, number, number] }) {
+const CodeSphere = memo(function CodeSphere({
+  position,
+}: {
+  position: [number, number, number];
+}) {
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
@@ -70,7 +74,11 @@ const CodeSphere = memo(function CodeSphere({ position }: { position: [number, n
 });
 
 // Octahedron shapes - Memoized for performance
-const CodeOctahedron = memo(function CodeOctahedron({ position }: { position: [number, number, number] }) {
+const CodeOctahedron = memo(function CodeOctahedron({
+  position,
+}: {
+  position: [number, number, number];
+}) {
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
@@ -172,7 +180,8 @@ const ParticlesBackground = memo(function ParticlesBackground() {
   // Performance optimization: only render on devices with sufficient capability
   const shouldRender = useMemo(() => {
     const canvas = document.createElement('canvas');
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    const gl =
+      canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
     return gl !== null && window.devicePixelRatio <= 2;
   }, []);
 

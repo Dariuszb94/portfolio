@@ -58,13 +58,13 @@ const typewriterOptions = {
 function Intro() {
   // Performance optimization: delay 3D background loading
   const [shouldLoad3D, setShouldLoad3D] = useState(false);
-  
+
   useEffect(() => {
     // Load 3D background after initial content is rendered
     const timer = setTimeout(() => {
       setShouldLoad3D(true);
     }, 100); // Small delay to prioritize text content
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -95,7 +95,7 @@ function Intro() {
     <Container>
       {/* Always show static background immediately */}
       <StaticParticlesBackground />
-      
+
       {/* Load 3D background only after initial render */}
       {shouldLoad3D && (
         <ErrorBoundary>
@@ -104,7 +104,7 @@ function Intro() {
           </Suspense>
         </ErrorBoundary>
       )}
-      
+
       <Title>Dariusz Berer</Title>
       <Subtitle>Frontend Developer</Subtitle>
       <TypewriterContainer>

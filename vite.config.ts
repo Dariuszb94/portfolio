@@ -36,15 +36,15 @@ export default defineConfig({
       '@react-three/fiber',
       '@react-three/drei',
       'styled-components',
-      'typewriter-effect'
+      'typewriter-effect',
     ],
     // Force pre-bundling for better cache
-    force: true
+    force: true,
   },
   // Performance optimizations
   server: {
     hmr: {
-      overlay: false // Disable error overlay for better dev performance
-    }
-  }
+      overlay: false, // Disable error overlay for better dev performance
+    },
+  },
 });

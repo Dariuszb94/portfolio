@@ -14,14 +14,20 @@ body {
 }
 
 /* Optimized text rendering */
-h1, h2, h3, p, span {
+h1,
+h2,
+h3,
+p,
+span {
   text-rendering: optimizeLegibility;
-  -webkit-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: 'kern' 1;
+  font-feature-settings: 'kern' 1;
 }
 
 /* Reduce paint operations */
-img, video, canvas {
+img,
+video,
+canvas {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: optimize-contrast;
 }
