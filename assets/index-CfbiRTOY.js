@@ -3953,6 +3953,7 @@ No matching component was found for:
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: -1;
 `;function gB({position:s,rotationSpeed:t}){const e=_e.useRef(null);return Hm(n=>{e.current&&(e.current.rotation.x+=t*.3,e.current.rotation.y+=t*.2,e.current.position.y=s[1]+Math.sin(n.clock.elapsedTime+s[0])*.1)}),Ze.jsx(pB,{speed:.5,rotationIntensity:.2,floatIntensity:.2,children:Ze.jsxs("mesh",{ref:e,position:s,children:[Ze.jsx("boxGeometry",{args:[.6,.6,.6]}),Ze.jsx("meshBasicMaterial",{color:"#64ffda",transparent:!0,opacity:.15,wireframe:!0})]})})}function vB({position:s}){const t=_e.useRef(null);return Hm(e=>{t.current&&(t.current.rotation.x=e.clock.elapsedTime*.1,t.current.rotation.y=e.clock.elapsedTime*.15,t.current.position.x=s[0]+Math.sin(e.clock.elapsedTime*.3)*.2)}),Ze.jsxs("mesh",{ref:t,position:s,children:[Ze.jsx("sphereGeometry",{args:[.2,12,12]}),Ze.jsx("meshBasicMaterial",{color:"#82aaff",transparent:!0,opacity:.2,wireframe:!0})]})}function yB({position:s}){const t=_e.useRef(null);return Hm(e=>{t.current&&(t.current.rotation.x=e.clock.elapsedTime*.15,t.current.rotation.z=e.clock.elapsedTime*.1,t.current.position.z=s[2]+Math.sin(e.clock.elapsedTime*.4)*.15)}),Ze.jsxs("mesh",{ref:t,position:s,children:[Ze.jsx("octahedronGeometry",{args:[.25]}),Ze.jsx("meshBasicMaterial",{color:"#c792ea",transparent:!0,opacity:.25,wireframe:!0})]})}function _B(){const s=_e.useMemo(()=>Array.from({length:4},()=>({position:[(Math.random()-.5)*10,(Math.random()-.5)*8,(Math.random()-.5)*6],rotationSpeed:.002+Math.random()*.005})),[]),t=_e.useMemo(()=>Array.from({length:6},()=>({position:[(Math.random()-.5)*12,(Math.random()-.5)*10,(Math.random()-.5)*8]})),[]),e=_e.useMemo(()=>Array.from({length:3},()=>({position:[(Math.random()-.5)*14,(Math.random()-.5)*12,(Math.random()-.5)*10]})),[]);return Ze.jsxs(Ze.Fragment,{children:[Ze.jsx("ambientLight",{intensity:.3}),Ze.jsx("pointLight",{position:[10,10,10],intensity:.5}),Ze.jsx("pointLight",{position:[-10,-10,-10],intensity:.2,color:"#64ffda"}),s.map((n,a)=>Ze.jsx(gB,{position:n.position,rotationSpeed:n.rotationSpeed},`cube-${a}`)),t.map((n,a)=>Ze.jsx(vB,{position:n.position},`sphere-${a}`)),e.map((n,a)=>Ze.jsx(yB,{position:n.position},`oct-${a}`)),Ze.jsx(dB,{enableZoom:!1,enablePan:!1,autoRotate:!0,autoRotateSpeed:.2,maxPolarAngle:Math.PI/2,minPolarAngle:Math.PI/2})]})}const xB=()=>Ze.jsx(mB,{children:Ze.jsx(aB,{camera:{position:[0,0,8],fov:50,near:.1,far:1e3},gl:{antialias:!0,alpha:!0,powerPreference:"high-performance"},children:Ze.jsx(_B,{})})}),SB=pd.div`
   min-height: 100vh;
   display: flex;
@@ -3961,7 +3962,6 @@ No matching component was found for:
   align-items: center;
   margin: 0 auto;
   padding: 24px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: white;
   position: relative;
 `,bB=pd.h1`
@@ -3969,11 +3969,6 @@ No matching component was found for:
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
-  background: linear-gradient(45deg, #ffffff, #f0f0f0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `,MB=pd.div`
   font-size: 1.25rem;
   line-height: 1.6;
