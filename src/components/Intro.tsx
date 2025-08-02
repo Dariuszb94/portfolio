@@ -10,7 +10,6 @@ const Container = styled.div`
   align-items: center;
   margin: 0 auto;
   padding: 24px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: white;
   position: relative;
 `;
@@ -20,11 +19,6 @@ const Title = styled.h1`
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
-  background: linear-gradient(45deg, #ffffff, #f0f0f0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
 const TypewriterContainer = styled.div`
