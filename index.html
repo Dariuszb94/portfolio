@@ -11,8 +11,53 @@
     <meta name="theme-color" content="#1a1a2e" />
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Optimized font loading for better LCP -->
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiJ-Ek-_EeAmEVQ.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <style>
+      /* Critical font-face declarations for immediate text rendering */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2')
+          format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiJ-Ek-_EeAmEVQ.woff2')
+          format('woff2');
+      }
+
+      /* Critical background styles for immediate rendering */
+      body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          'Roboto', sans-serif;
+      }
+    </style>
+
     <link
       rel="preload"
       as="style"
