@@ -4,6 +4,7 @@ import type { TypewriterClass } from 'typewriter-effect';
 import { Suspense, useMemo, useState, useEffect } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import StaticParticlesBackground from './StaticParticlesBackground';
+import { colors, hslRanges } from '../utils/colors';
 
 // Lazy load the ParticlesBackground component to reduce initial bundle size
 // const ParticlesBackground = lazy(() => import('./ParticlesBackground'));
@@ -25,7 +26,7 @@ const Title = styled.h1`
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
-  color: #64ffda;
+  color: ${colors.accent.primary};
 `;
 
 const TypewriterContainer = styled.div`
@@ -171,7 +172,11 @@ function Intro() {
                       vy: (Math.random() - 0.5) * 0.2,
                       size,
                       originalSize: size,
-                      hue: Math.random() * 60 + 160, // Blue to cyan range
+                      hue:
+                        Math.random() *
+                          (hslRanges.primaryParticles.hueMax -
+                            hslRanges.primaryParticles.hueMin) +
+                        hslRanges.primaryParticles.hueMin,
                     });
                   }
 
@@ -294,7 +299,12 @@ function Intro() {
                         particle.size +=
                           (particle.originalSize - particle.size) * 0.08;
                         particle.hue +=
-                          (Math.random() * 60 + 160 - particle.hue) * 0.005;
+                          (Math.random() *
+                            (hslRanges.primaryParticles.hueMax -
+                              hslRanges.primaryParticles.hueMin) +
+                            hslRanges.primaryParticles.hueMin -
+                            particle.hue) *
+                          0.005;
                       }
 
                       // Optimized damping and movement
@@ -366,10 +376,10 @@ function Intro() {
                           const finalOpacity =
                             baseOpacity * (isEitherNearMouse ? 2.5 : 1);
 
-                          ctx.strokeStyle = `rgba(100, 255, 218, ${Math.min(
-                            finalOpacity,
-                            0.6
-                          )})`;
+                          ctx.strokeStyle = `${colors.utils.primaryAccent60.replace(
+                            '0.6',
+                            `${Math.min(finalOpacity, 0.6)}`
+                          )}`;
                           ctx.lineWidth = isEitherNearMouse ? 1.3 : 1;
                           ctx.stroke();
                         }

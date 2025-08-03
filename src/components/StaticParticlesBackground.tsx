@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { memo } from 'react';
+import { colors } from '../utils/colors';
 
 const float = keyframes`
   0%, 100% {
@@ -27,7 +28,7 @@ const Container = styled.div`
   height: 100%;
   pointer-events: none;
   z-index: -1;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: ${colors.gradients.primary};
   animation: ${fadeIn} 0.5s ease-out;
   overflow: hidden;
 `;
@@ -43,7 +44,7 @@ const FloatingElement = styled.div<{
   top: ${(props) => props.top}%;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
-  border: 1px solid rgba(100, 255, 218, 0.2);
+  border: 1px solid ${colors.utils.primaryAccent30};
   border-radius: 50%;
   animation: ${float} ${(props) => 3 + props.delay}s ease-in-out infinite;
   animation-delay: ${(props) => props.delay}s;
@@ -54,7 +55,7 @@ const CodeSymbol = styled.div<{ delay: number; left: number; top: number }>`
   position: absolute;
   left: ${(props) => props.left}%;
   top: ${(props) => props.top}%;
-  color: rgba(130, 170, 255, 0.3);
+  color: ${colors.utils.secondaryAccent40};
   font-size: 24px;
   font-family: 'Courier New', monospace;
   animation: ${float} ${(props) => 4 + props.delay}s ease-in-out infinite;

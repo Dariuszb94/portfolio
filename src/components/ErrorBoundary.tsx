@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import type { ReactNode, ErrorInfo } from 'react';
 import styled from 'styled-components';
+import { colors } from '../utils/colors';
 
 interface Props {
   children: ReactNode;
@@ -16,11 +17,11 @@ const ErrorContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: ${colors.gradients.primary};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: ${colors.text.primary};
   text-align: center;
   padding: 20px;
 `;

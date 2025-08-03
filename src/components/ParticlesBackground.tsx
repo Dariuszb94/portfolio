@@ -3,6 +3,7 @@ import { Float, OrbitControls } from '@react-three/drei';
 import { useRef, useMemo, memo } from 'react';
 import * as THREE from 'three';
 import styled from 'styled-components';
+import { colors } from '../utils/colors';
 
 const CanvasContainer = styled.div`
   position: absolute;
@@ -38,7 +39,7 @@ const CodeCube = memo(function CodeCube({
       <mesh ref={meshRef} position={position}>
         <boxGeometry args={[0.6, 0.6, 0.6]} />
         <meshBasicMaterial
-          color='#64ffda'
+          color={colors.accent.primary}
           transparent
           opacity={0.15}
           wireframe
@@ -68,7 +69,12 @@ const CodeSphere = memo(function CodeSphere({
   return (
     <mesh ref={meshRef} position={position}>
       <sphereGeometry args={[0.2, 8, 8]} />
-      <meshBasicMaterial color='#82aaff' transparent opacity={0.2} wireframe />
+      <meshBasicMaterial
+        color={colors.accent.secondary}
+        transparent
+        opacity={0.2}
+        wireframe
+      />
     </mesh>
   );
 });
@@ -93,7 +99,12 @@ const CodeOctahedron = memo(function CodeOctahedron({
   return (
     <mesh ref={meshRef} position={position}>
       <octahedronGeometry args={[0.25]} />
-      <meshBasicMaterial color='#c792ea' transparent opacity={0.25} wireframe />
+      <meshBasicMaterial
+        color={colors.accent.tertiary}
+        transparent
+        opacity={0.25}
+        wireframe
+      />
     </mesh>
   );
 });
