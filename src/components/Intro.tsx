@@ -43,7 +43,7 @@ const TypewriterContainer = styled.div`
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.5rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 3rem;
   opacity: 0.9;
   font-weight: 600;
@@ -112,7 +112,6 @@ function Intro() {
 
   return (
     <Container>
-      {/* Always show static background immediately */}
       <StaticParticlesBackground />
       {shouldLoad3D && (
         <ErrorBoundary>
