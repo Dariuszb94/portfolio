@@ -113,7 +113,6 @@ function Intro() {
     <Container>
       {/* Always show static background immediately */}
       <StaticParticlesBackground />
-      /* Custom particle effect without external libraries */
       {shouldLoad3D && (
         <ErrorBoundary>
           <Suspense fallback={null}>
@@ -152,6 +151,10 @@ function Intro() {
                   let mouseTimeout: number;
                   let animationId: number;
 
+                  // 3D rotation state
+                  const rotation = { x: 0, y: 0, targetX: 0, targetY: 0 };
+                  const maxTilt = 15; // Maximum tilt angle in degrees
+
                   // Performance controls
                   const maxInteractionDistance = 180;
                   const maxConnectionDistance = 120;
@@ -189,9 +192,21 @@ function Intro() {
                     mouse.y = clientY - rect.top;
                     mouse.isMoving = true;
 
+                    // Calculate 3D rotation based on mouse position
+                    const centerX = canvas.width / 2;
+                    const centerY = canvas.height / 2;
+                    const normalizedX = (mouse.x - centerX) / centerX; // -1 to 1
+                    const normalizedY = (mouse.y - centerY) / centerY; // -1 to 1
+
+                    rotation.targetY = normalizedX * maxTilt; // Horizontal mouse movement = Y rotation
+                    rotation.targetX = -normalizedY * maxTilt; // Vertical mouse movement = X rotation (inverted)
+
                     clearTimeout(mouseTimeout);
                     mouseTimeout = setTimeout(() => {
                       mouse.isMoving = false;
+                      // Return to center when mouse stops moving
+                      rotation.targetX = 0;
+                      rotation.targetY = 0;
                     }, 200);
                   };
 
@@ -238,6 +253,16 @@ function Intro() {
                       animationId = requestAnimationFrame(animate);
                       return;
                     }
+
+                    // Smooth 3D rotation interpolation
+                    const rotationLerpFactor = 0.36; // Adjust for smoother/faster rotation
+                    rotation.x +=
+                      (rotation.targetX - rotation.x) * rotationLerpFactor;
+                    rotation.y +=
+                      (rotation.targetY - rotation.y) * rotationLerpFactor;
+
+                    // Apply 3D transform to the canvas
+                    canvas.style.transform = `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
 
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -378,6 +403,10 @@ function Intro() {
                     if (animationId) {
                       cancelAnimationFrame(animationId);
                     }
+                    // Reset canvas transform
+                    if (canvas) {
+                      canvas.style.transform = '';
+                    }
                     window.removeEventListener('resize', handleResize);
                     canvas.removeEventListener('mousemove', handleMouseMove);
                     canvas.removeEventListener('touchmove', handleTouchMove);
@@ -407,6 +436,8 @@ function Intro() {
                   height: '100%',
                   cursor: 'pointer', // More intuitive cursor
                   touchAction: 'none', // Prevent default touch behaviors
+                  transformOrigin: 'center center', // Ensure rotation happens from center
+                  transformStyle: 'preserve-3d', // Enable 3D transforms
                 }}
               />
             </div>
