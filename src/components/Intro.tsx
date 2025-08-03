@@ -112,7 +112,6 @@ function Intro() {
 
   return (
     <Container>
-      <StaticParticlesBackground />
       {shouldLoad3D && (
         <ErrorBoundary>
           <Suspense fallback={null}>
