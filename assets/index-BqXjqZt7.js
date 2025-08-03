@@ -22,11 +22,10 @@ import{g as e,r as t,j as r,c as i}from"./three-DPdPuE_v.js";import{r as n,d as 
   color: white;
   position: relative;
 `,x=o.h1`
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(3rem, 8vw, 4rem);
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
-  color: ${l.accent.primary};
 `,g=o.div`
   font-size: 1.25rem;
   line-height: 1.6;
@@ -44,6 +43,7 @@ import{g as e,r as t,j as r,c as i}from"./three-DPdPuE_v.js";import{r as n,d as 
   opacity: 0.9;
   font-weight: 600;
   text-align: center;
+  color: ${l.accent.primary};
 `,f={autoStart:!0,delay:20,deleteSpeed:.1};function y(){const e=t.useMemo(()=>e=>{e.typeString("<span>I build web apps with clean code and creative design, focusing on performance and innovation. </span>").pauseFor(500).changeDelay(30).typeString("<span>I am committed to delivering exceptional digital solutions</span>").pauseFor(1e3).deleteChars(56).changeDelay(18).typeString("<span>just make nice things for the web, let's create something amazing together!</span>").start()},[]);return r.jsxs(m,{children:[r.jsx(p,{}),r.jsx(x,{children:"Dariusz Berer"}),r.jsx(u,{children:"Frontend Developer"}),r.jsx(g,{children:r.jsx(s,{options:f,onInit:e})})]})}const v=o.div`
   position: fixed;
   top: 20px;
