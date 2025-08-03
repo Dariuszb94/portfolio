@@ -73,10 +73,13 @@ const StaticParticlesBackground = memo(function StaticParticlesBackground() {
   ];
 
   const codeSymbols = [
-    { symbol: '{', left: 15, top: 40, delay: 0.2 },
-    { symbol: '}', left: 85, top: 60, delay: 0.8 },
-    { symbol: '</', left: 30, top: 85, delay: 1.2 },
-    { symbol: '>', left: 75, top: 15, delay: 1.8 },
+    { symbol: '<div>', left: 15, top: 40, delay: 0.2 },
+    { symbol: 'CSS', left: 85, top: 60, delay: 0.8 },
+    { symbol: 'JS', left: 75, top: 15, delay: 1.8 },
+    { symbol: 'TS', left: 40, top: 25, delay: 2.2 },
+    { symbol: '<JSX>', left: 60, top: 75, delay: 2.6 },
+    { symbol: '[]', left: 90, top: 40, delay: 3.0 },
+    { symbol: '()', left: 25, top: 60, delay: 3.4 },
   ];
 
   return (

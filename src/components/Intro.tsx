@@ -44,7 +44,7 @@ const Subtitle = styled.p`
   font-size: 1.5rem;
   margin-bottom: 3rem;
   opacity: 0.9;
-  font-weight: 300;
+  font-weight: 600;
   text-align: center;
 `;
 
