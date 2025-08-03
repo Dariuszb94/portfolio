@@ -53,10 +53,17 @@ import{g as e,r as t,j as r,c as i}from"./three-DPdPuE_v.js";import{r as n,d as 
   z-index: 1000;
   opacity: 0.7;
   backdrop-filter: blur(10px);
-  background: rgba(${l.background.secondary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")}, 0.6);
+  background: rgba(
+    ${l.background.secondary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")},
+    0.6
+  );
   padding: 12px;
   border-radius: 20px;
-  border: 1px solid rgba(${l.accent.primary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")}, 0.3);
+  border: 1px solid
+    rgba(
+      ${l.accent.primary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")},
+      0.3
+    );
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
 
@@ -101,7 +108,11 @@ import{g as e,r as t,j as r,c as i}from"./three-DPdPuE_v.js";import{r as n,d as 
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(${l.accent.primary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")}, 0.3);
+    box-shadow: 0 4px 16px
+      rgba(
+        ${l.accent.primary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")},
+        0.3
+      );
 
     &::before {
       background: linear-gradient(
