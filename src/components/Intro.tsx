@@ -18,11 +18,10 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(3rem, 8vw, 4rem);
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
-  color: ${colors.accent.primary};
 `;
 
 const TypewriterContainer = styled.div`
@@ -44,6 +43,7 @@ const Subtitle = styled.p`
   opacity: 0.9;
   font-weight: 600;
   text-align: center;
+  color: ${colors.accent.primary};
 `;
 
 // Memoized typewriter options to prevent recreating on each render
