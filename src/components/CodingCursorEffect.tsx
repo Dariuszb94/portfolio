@@ -162,22 +162,22 @@ const CodingCursorEffect: React.FC = () => {
 
   const handleTouchMove = useCallback(
     (e: TouchEvent) => {
-      e.preventDefault();
+      // Don't prevent default to allow scrolling
       setIsTouch(true);
 
       const touch = e.touches[0];
       if (touch) {
         mouseRef.current = { x: touch.clientX, y: touch.clientY };
 
-        // Create particles on touch movement
-        if (Math.random() < 0.5) {
+        // Reduce particle creation frequency to avoid interference with scrolling
+        if (Math.random() < 0.2) {
           particlesRef.current.push(
             createParticle(touch.clientX, touch.clientY)
           );
         }
 
-        // More frequent keyword particles on touch for better visibility
-        if (Math.random() < 0.12) {
+        // Less frequent keyword particles on touch
+        if (Math.random() < 0.05) {
           particlesRef.current.push(
             createParticle(touch.clientX, touch.clientY, true)
           );
@@ -288,10 +288,10 @@ const CodingCursorEffect: React.FC = () => {
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('click', handleClick);
 
-    // Touch events
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    // Touch events - allow passive scrolling
+    document.addEventListener('touchmove', handleTouchMove, { passive: true });
     document.addEventListener('touchstart', handleTouchStart, {
-      passive: false,
+      passive: true,
     });
 
     // Window resize
