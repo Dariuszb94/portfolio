@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
 import type { TypewriterClass } from 'typewriter-effect';
 import { useMemo } from 'react';
-import InteractiveParticles from './InteractiveParticles';
 import { colors } from '../utils/colors';
 
 const Container = styled.div`
@@ -79,7 +78,6 @@ function Intro() {
 
   return (
     <Container>
-      <InteractiveParticles />
       <Title>Dariusz Berer</Title>
       <Subtitle>Frontend Developer</Subtitle>
       <TypewriterContainer>
