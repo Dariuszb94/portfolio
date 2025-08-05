@@ -10,8 +10,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Separate Three.js into its own chunk (heavy library)
-          three: ['three', '@react-three/fiber', '@react-three/drei'],
           // Separate React into its own chunk
           'react-vendor': ['react', 'react-dom'],
           // Separate styled-components and typewriter
@@ -29,15 +27,7 @@ export default defineConfig({
   },
   // Optimize dependencies
   optimizeDeps: {
-    include: [
-      'react',
-      'react-dom',
-      'three',
-      '@react-three/fiber',
-      '@react-three/drei',
-      'styled-components',
-      'typewriter-effect',
-    ],
+    include: ['react', 'react-dom', 'styled-components', 'typewriter-effect'],
     // Force pre-bundling for better cache
     force: true,
   },
