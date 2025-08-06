@@ -144,17 +144,25 @@ const CodingCursorEffect: React.FC = () => {
     (e: MouseEvent) => {
       if (isTouch) return;
 
-      // Use more precise cursor positioning
-      mouseRef.current = { x: e.pageX, y: e.pageY };
+      // Use clientX/Y for more accurate cursor positioning relative to viewport
+      mouseRef.current = { x: e.clientX, y: e.clientY };
 
-      // Create particles on mouse movement
+      // Create particles closer to cursor with slight random offset
       if (Math.random() < 0.4) {
-        particlesRef.current.push(createParticle(e.pageX, e.pageY));
+        const offsetX = (Math.random() - 0.5) * 10; // Small random offset
+        const offsetY = (Math.random() - 0.5) * 10;
+        particlesRef.current.push(
+          createParticle(e.clientX + offsetX, e.clientY + offsetY)
+        );
       }
 
-      // Occasionally create keyword particles
+      // Occasionally create keyword particles closer to cursor
       if (Math.random() < 0.08) {
-        particlesRef.current.push(createParticle(e.pageX, e.pageY, true));
+        const offsetX = (Math.random() - 0.5) * 8;
+        const offsetY = (Math.random() - 0.5) * 8;
+        particlesRef.current.push(
+          createParticle(e.clientX + offsetX, e.clientY + offsetY, true)
+        );
       }
     },
     [createParticle, isTouch]
@@ -189,12 +197,16 @@ const CodingCursorEffect: React.FC = () => {
 
   const handleClick = useCallback(
     (e: MouseEvent) => {
-      // Create burst of particles on click
+      // Create burst of particles on click closer to cursor
       for (let i = 0; i < 8; i++) {
-        particlesRef.current.push(createParticle(e.pageX, e.pageY));
+        const offsetX = (Math.random() - 0.5) * 15;
+        const offsetY = (Math.random() - 0.5) * 15;
+        particlesRef.current.push(
+          createParticle(e.clientX + offsetX, e.clientY + offsetY)
+        );
       }
-      // Add a keyword particle
-      particlesRef.current.push(createParticle(e.pageX, e.pageY, true));
+      // Add a keyword particle at cursor position
+      particlesRef.current.push(createParticle(e.clientX, e.clientY, true));
     },
     [createParticle]
   );
@@ -218,65 +230,62 @@ const CodingCursorEffect: React.FC = () => {
     [createParticle]
   );
 
-  const animate = useCallback(
-    (currentTime: number) => {
-      const canvas = canvasRef.current;
-      const ctx = canvas?.getContext('2d');
-      if (!canvas || !ctx) return;
+  const animate = useCallback((currentTime: number) => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !ctx) return;
 
-      const deltaTime = currentTime - lastTimeRef.current;
-      lastTimeRef.current = currentTime;
+    const deltaTime = currentTime - lastTimeRef.current;
+    lastTimeRef.current = currentTime;
 
-      // Clear canvas with slight trail effect using app's background color
-      ctx.fillStyle = 'rgba(11, 20, 38, 0.05)'; // matches colors.background.primary with transparency
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Clear canvas with slight trail effect using app's background color
+    ctx.fillStyle = 'rgba(11, 20, 38, 0.05)'; // matches colors.background.primary with transparency
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw particles
-      particlesRef.current = particlesRef.current.filter((particle) => {
-        // Update particle
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        particle.life -= deltaTime / 16; // Normalize for 60fps
-        particle.opacity = particle.life / particle.maxLife;
+    // Update and draw particles
+    particlesRef.current = particlesRef.current.filter((particle) => {
+      // Update particle
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+      particle.life -= deltaTime / 16; // Normalize for 60fps
+      particle.opacity = particle.life / particle.maxLife;
 
-        // Add slight gravity
-        particle.vy += 0.05;
+      // Add slight gravity
+      particle.vy += 0.05;
 
-        // Fade and shrink
-        particle.size *= 0.998;
+      // Fade and shrink
+      particle.size *= 0.998;
 
-        // Draw particle
-        if (particle.opacity > 0) {
-          ctx.save();
-          ctx.globalAlpha = particle.opacity * 0.6; // Reduced overall opacity
-          ctx.font = `${particle.size}px 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace`; // Removed bold
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
+      // Draw particle
+      if (particle.opacity > 0) {
+        ctx.save();
+        ctx.globalAlpha = particle.opacity * 0.6; // Reduced overall opacity
+        ctx.font = `${particle.size}px 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace`; // Removed bold
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
 
-          // Subtle glow effect
-          // Main text with minimal glow
-          ctx.shadowColor = particle.color;
-          ctx.shadowBlur = particle.size * 0.4;
-          ctx.fillStyle = particle.color;
-          ctx.globalAlpha = particle.opacity * 0.8;
-          ctx.fillText(particle.char, particle.x, particle.y);
+        // Subtle glow effect
+        // Main text with minimal glow
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = particle.size * 0.4;
+        ctx.fillStyle = particle.color;
+        ctx.globalAlpha = particle.opacity * 0.8;
+        ctx.fillText(particle.char, particle.x, particle.y);
 
-          // Very subtle bright core
-          ctx.shadowBlur = particle.size * 0.1;
-          ctx.fillStyle = '#ffffff';
-          ctx.globalAlpha = particle.opacity * 0.3;
-          ctx.fillText(particle.char, particle.x, particle.y);
+        // Very subtle bright core
+        ctx.shadowBlur = particle.size * 0.1;
+        ctx.fillStyle = '#ffffff';
+        ctx.globalAlpha = particle.opacity * 0.3;
+        ctx.fillText(particle.char, particle.x, particle.y);
 
-          ctx.restore();
-        }
+        ctx.restore();
+      }
 
-        return particle.life > 0 && particle.opacity > 0.01;
-      });
+      return particle.life > 0 && particle.opacity > 0.01;
+    });
 
-      animationRef.current = requestAnimationFrame(animate);
-    },
-    [isTouch]
-  );
+    animationRef.current = requestAnimationFrame(animate);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
