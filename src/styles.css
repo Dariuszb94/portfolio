@@ -5,37 +5,6 @@
 body {
   will-change: auto;
   contain: layout style paint;
-  cursor: none; /* Hide default cursor for custom effect */
-}
-
-/* Custom cursor for interactive elements */
-button,
-a,
-input,
-textarea,
-select {
-  cursor: pointer !important;
-}
-
-/* Show default cursor on mobile devices */
-@media (hover: none) and (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
-
-  button,
-  a,
-  input,
-  textarea,
-  select {
-    cursor: pointer !important;
-  }
-}
-
-/* Smooth animations with GPU acceleration */
-* {
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 /* Optimized text rendering */
