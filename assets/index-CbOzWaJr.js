@@ -117,10 +117,68 @@ import{r as e,d as t,a as n,m as r,R as l}from"./ui-DmH6xNGC.js";import{r as a,a
 `,L=t.p`
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 3rem;
-  opacity: 0.9;
+  opacity: 0;
   font-weight: 600;
   text-align: center;
+  position: relative;
   color: ${C.accent.primary};
+  transform: translateX(-100px) rotateX(90deg);
+  animation: subtitleEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
+  will-change: transform, opacity, filter;
+
+  @keyframes subtitleEntrance {
+    0% {
+      transform: translateX(-100px) rotateX(90deg) scale(0.8);
+      opacity: 0;
+      filter: blur(15px) brightness(0.3);
+    }
+    
+    40% {
+      transform: translateX(10px) rotateX(0deg) scale(1.1);
+      opacity: 0.7;
+      filter: blur(3px) brightness(1.2);
+    }
+    
+    70% {
+      transform: translateX(-5px) rotateX(0deg) scale(0.95);
+      opacity: 0.85;
+      filter: blur(1px) brightness(1.1);
+    }
+    
+    100% {
+      transform: translateX(0) rotateX(0deg) scale(1);
+      opacity: 0.9;
+      filter: blur(0px) brightness(1);
+    }
+  }
+
+  /* Subtle glow effect synchronized with title */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: ${C.accent.primary};
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: -1;
+    animation: subtitleGlow 2.5s ease-in-out 1.5s infinite alternate;
+    filter: blur(20px);
+  }
+
+  @keyframes subtitleGlow {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.3;
+    }
+  }
 `,T={autoStart:!0,delay:20,deleteSpeed:.1};function _(){const e=n.useMemo(()=>e=>{e.typeString("<span>I build web apps with clean code and creative design, focusing on performance and innovation. </span>").pauseFor(500).changeDelay(30).typeString("<span>I am committed to delivering exceptional digital solutions</span>").pauseFor(1e3).deleteChars(56).changeDelay(18).typeString("<span>just make nice things for the web, let's create something amazing together!</span>").start()},[]);return g.jsxs(z,{children:[g.jsx(P,{children:"Dariusz Berer"}),g.jsx(L,{children:"Frontend Developer"}),g.jsx(N,{children:g.jsx(E,{options:T,onInit:e})})]})}const M=t.div`
   position: fixed;
   top: 20px;
