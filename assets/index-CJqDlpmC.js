@@ -186,7 +186,7 @@ import{r as e,d as t,a as n,m as r,R as l}from"./ui-DmH6xNGC.js";import{r as a,a
   display: flex;
   gap: 12px;
   z-index: 1000;
-  opacity: 0.7;
+  opacity: 0;
   backdrop-filter: blur(10px);
   background: rgba(
     ${C.background.secondary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")},
@@ -200,10 +200,21 @@ import{r as e,d as t,a as n,m as r,R as l}from"./ui-DmH6xNGC.js";import{r as a,a
       0.3
     );
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.3s ease;
+  transform: translateX(80px);
+  animation: slideIn 1s ease-out 1.2s forwards;
+  will-change: transform, opacity;
+
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+      opacity: 0.7;
+    }
+  }
 
   &:hover {
     opacity: 1;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
   }
 `,F=t.a`
   width: 40px;
@@ -220,7 +231,23 @@ import{r as e,d as t,a as n,m as r,R as l}from"./ui-DmH6xNGC.js";import{r as a,a
   position: relative;
   overflow: hidden;
   text-decoration: none;
-  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: fadeIn 0.4s ease-out forwards;
+  will-change: transform, opacity;
+
+  /* Lightweight staggered delay */
+  &:nth-child(1) { animation-delay: 2s; }
+  &:nth-child(2) { animation-delay: 2.1s; }
+  &:nth-child(3) { animation-delay: 2.2s; }
+  &:nth-child(4) { animation-delay: 2.3s; }
+
+  @keyframes fadeIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 
   &::before {
     content: '';
@@ -229,7 +256,7 @@ import{r as e,d as t,a as n,m as r,R as l}from"./ui-DmH6xNGC.js";import{r as a,a
     background: ${C.background.secondary};
     border-radius: 11px;
     z-index: 1;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
   }
 
   svg {
@@ -238,16 +265,12 @@ import{r as e,d as t,a as n,m as r,R as l}from"./ui-DmH6xNGC.js";import{r as a,a
     width: 18px;
     height: 18px;
     color: ${C.accent.primary};
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
   }
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px
-      rgba(
-        ${C.accent.primary.replace("#","").match(/.{2}/g)?.map(e=>parseInt(e,16)).join(", ")},
-        0.3
-      );
+    transition: transform 0.2s ease;
 
     &::before {
       background: linear-gradient(
