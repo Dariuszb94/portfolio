@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { memo } from 'react';
-import { colors } from '../utils/colors';
+import { colors } from '../../utils/colors';
 
 const float = keyframes`
   0%, 100% {

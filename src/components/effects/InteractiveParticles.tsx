@@ -1,6 +1,6 @@
 import { Suspense, useState, useEffect } from 'react';
-import ErrorBoundary from './ErrorBoundary';
-import { colors, hslRanges } from '../utils/colors';
+import ErrorBoundary from '../common/ErrorBoundary';
+import { colors, hslRanges } from '../../utils/colors';
 
 function InteractiveParticles() {
   // Performance optimization: delay 3D background loading

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { colors } from '../utils/colors';
+import { colors } from '../../utils/colors';
 
 interface Particle {
   id: number;

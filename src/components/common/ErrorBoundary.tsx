@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import type { ReactNode, ErrorInfo } from 'react';
 import styled from 'styled-components';
-import { colors } from '../utils/colors';
+import { colors } from '../../utils/colors';
 
 interface Props {
   children: ReactNode;

@@ -1,7 +1,5 @@
-import Intro from './components/Intro';
-import Contact from './components/Contact';
-import StaticParticlesBackground from './components/StaticParticlesBackground';
-import CodingCursorEffect from './components/CodingCursorEffect';
+import { Intro, Contact } from './components/layout';
+import { StaticParticlesBackground, CodingCursorEffect } from './components/effects';
 
 function App() {
   return (
