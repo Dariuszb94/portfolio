@@ -132,19 +132,19 @@ import{r as e,d as t,a as n,m as r,R as l}from"./ui-DmH6xNGC.js";import{r as a,a
       opacity: 0;
       filter: blur(15px) brightness(0.3);
     }
-    
+
     40% {
       transform: translateX(10px) rotateX(0deg) scale(1.1);
       opacity: 0.7;
       filter: blur(3px) brightness(1.2);
     }
-    
+
     70% {
       transform: translateX(-5px) rotateX(0deg) scale(0.95);
       opacity: 0.85;
       filter: blur(1px) brightness(1.1);
     }
-    
+
     100% {
       transform: translateX(0) rotateX(0deg) scale(1);
       opacity: 0.9;
