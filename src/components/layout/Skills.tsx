@@ -191,7 +191,7 @@ function Skills() {
   }, {} as Record<string, Skill[]>);
 
   return (
-    <SkillsSection>
+    <SkillsSection id="skills">
       <SectionHeader
         title='Skills & Technologies'
         subtitle='Crafting digital experiences with modern tools and technologies'

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import AnimatedTitle from '../ui/AnimatedTitle';
 import AnimatedSubtitle from '../ui/AnimatedSubtitle';
 import TypewriterText from '../ui/TypewriterText';
+import AnimatedScrollArrow from '../ui/AnimatedScrollArrow';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -21,6 +22,9 @@ function Intro() {
       <AnimatedTitle>Dariusz Berer</AnimatedTitle>
       <AnimatedSubtitle>Frontend Developer</AnimatedSubtitle>
       <TypewriterText />
+      <AnimatedScrollArrow 
+        targetId="skills" 
+      />
     </Container>
   );
 }
