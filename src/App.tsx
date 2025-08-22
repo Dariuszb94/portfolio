@@ -1,4 +1,4 @@
-import { Intro, Contact } from './components/layout';
+import { Intro, Skills, Contact } from './components/layout';
 import {
   StaticParticlesBackground,
   CodingCursorEffect,
@@ -10,6 +10,7 @@ function App() {
       <StaticParticlesBackground />
       <CodingCursorEffect />
       <Intro />
+      <Skills />
       <Contact />
     </>
   );
