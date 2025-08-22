@@ -164,12 +164,13 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  padding-bottom: 48px;
 
   span {
     font-size: inherit;
     font-weight: 300;
   }
-`,_={autoStart:!0,delay:20,deleteSpeed:.1};function A(){const e=n.useMemo(()=>e=>{e.typeString("<span>I build web apps with clean code and creative design, focusing on performance and innovation. </span>").pauseFor(500).changeDelay(30).typeString("<span>I am committed to delivering exceptional digital solutions</span>").pauseFor(1e3).deleteChars(56).changeDelay(18).typeString("<span>just make nice things for the web, let's create something amazing together!</span>").start()},[]);return g.jsx(T,{children:g.jsx(L,{options:_,onInit:e})})}const M=r`
+`,_={autoStart:!0,delay:20,deleteSpeed:.1};function A(){const e=n.useMemo(()=>e=>{e.typeString("<span>I build web apps with clean code, focusing on performance and innovation. </span>").pauseFor(500).changeDelay(30).typeString("<span>I am committed to delivering exceptional digital solutions</span>").pauseFor(1e3).deleteChars(56).changeDelay(18).typeString("<span>just make nice things for the web, let's create something amazing together!</span>").start()},[]);return g.jsx(T,{children:g.jsx(L,{options:_,onInit:e})})}const M=r`
   0%, 100% {
     transform: translateY(0);
   }
@@ -220,7 +221,7 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
   }
 `,$=e.div`
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
