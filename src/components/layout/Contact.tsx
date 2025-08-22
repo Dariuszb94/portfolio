@@ -73,8 +73,8 @@ function Contact({
                   <GitHubIcon />
                 </ContactIcon>
               }
-              label="GitHub"
-              value="@Dariuszb94"
+              label='GitHub'
+              value='@Dariuszb94'
               href={github}
             />
 
@@ -84,8 +84,8 @@ function Contact({
                   <LinkedInIcon />
                 </ContactIcon>
               }
-              label="LinkedIn"
-              value="/in/berer/"
+              label='LinkedIn'
+              value='/in/berer/'
               href={linkedin}
             />
 
@@ -95,7 +95,7 @@ function Contact({
                   <EmailIcon />
                 </ContactIcon>
               }
-              label="Email"
+              label='Email'
               value={email}
               href={`mailto:${email}`}
             />
@@ -106,7 +106,7 @@ function Contact({
                   <PhoneIcon />
                 </ContactIcon>
               }
-              label="Phone"
+              label='Phone'
               value={phone}
               href={`tel:${phone.replace(/\s/g, '')}`}
             />

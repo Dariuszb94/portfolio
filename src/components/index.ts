@@ -1,7 +1,7 @@
 // Layout Components
 export * from './layout';
 
-// UI Components  
+// UI Components
 export * from './ui';
 
 // Effects Components

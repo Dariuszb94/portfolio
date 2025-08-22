@@ -47,7 +47,11 @@ function ContactItem({ icon, label, value, href }: ContactItemProps) {
       {icon}
       <Details>
         <Label>{label}</Label>
-        <Value href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+        <Value
+          href={href}
+          target={href.startsWith('http') ? '_blank' : undefined}
+          rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        >
           {value}
         </Value>
       </Details>
