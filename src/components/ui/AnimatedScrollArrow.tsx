@@ -64,7 +64,7 @@ const rotate = keyframes`
 
 const Container = styled.div`
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -80,7 +80,7 @@ const ArrowContainer = styled.div`
   flex-direction: column;
   align-items: center;
   animation: ${float} 4s ease-in-out infinite;
-  
+
   &:hover {
     animation-play-state: paused;
   }
@@ -88,8 +88,8 @@ const ArrowContainer = styled.div`
 
 const ArrowButton = styled.button`
   background: linear-gradient(
-    135deg, 
-    rgba(30, 30, 40, 0.9) 0%, 
+    135deg,
+    rgba(30, 30, 40, 0.9) 0%,
     rgba(40, 40, 50, 0.85) 50%,
     rgba(50, 50, 60, 0.9) 100%
   );
@@ -105,9 +105,7 @@ const ArrowButton = styled.button`
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(255, 255, 255, 0.05),
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
   &::before {
@@ -143,10 +141,8 @@ const ArrowButton = styled.button`
 
   &:hover {
     transform: scale(1.15) translateY(-5px);
-    box-shadow: 
-      0 15px 50px rgba(0, 0, 0, 0.6),
-      0 0 40px rgba(255, 255, 255, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6),
+      0 0 40px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     background-position: 100% 0;
   }
 
@@ -173,7 +169,12 @@ const OuterRing = styled.div`
   height: 90px;
   border: 2px solid transparent;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(100, 100, 110, 0.3), rgba(80, 80, 90, 0.3)) border-box;
+  background: linear-gradient(
+      135deg,
+      rgba(100, 100, 110, 0.3),
+      rgba(80, 80, 90, 0.3)
+    )
+    border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: xor;
   animation: ${pulse} 3s ease-in-out infinite;
@@ -218,15 +219,21 @@ const ParticleEffect = styled.div`
   background: rgba(200, 200, 210, 0.6);
   border-radius: 50%;
   opacity: 0;
-  
+
   ${ArrowButton}:hover + & {
     opacity: 1;
     animation: ${ripple} 1s ease-out infinite;
   }
-  
-  &:nth-child(2) { animation-delay: 0.2s; }
-  &:nth-child(3) { animation-delay: 0.4s; }
-  &:nth-child(4) { animation-delay: 0.6s; }
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.6s;
+  }
 `;
 
 interface AnimatedScrollArrowProps {
@@ -234,14 +241,14 @@ interface AnimatedScrollArrowProps {
 }
 
 const AnimatedScrollArrow: React.FC<AnimatedScrollArrowProps> = ({
-  targetId
+  targetId,
 }) => {
   const handleClick = () => {
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
     }
   };
@@ -254,14 +261,14 @@ const AnimatedScrollArrow: React.FC<AnimatedScrollArrowProps> = ({
         <InnerGlow />
         <ArrowButton>
           <ArrowSvg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='3'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           >
-            <path d="M6 9l6 6 6-6" />
+            <path d='M6 9l6 6 6-6' />
           </ArrowSvg>
         </ArrowButton>
         <ParticleEffect />

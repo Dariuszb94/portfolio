@@ -9,6 +9,7 @@ const TypewriterContainer = styled.div`
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  padding-bottom: 48px;
 
   span {
     font-size: inherit;
@@ -29,7 +30,7 @@ function TypewriterText() {
     () => (typewriter: TypewriterClass) => {
       typewriter
         .typeString(
-          '<span>I build web apps with clean code and creative design, focusing on performance and innovation. </span>'
+          '<span>I build web apps with clean code, focusing on performance and innovation. </span>'
         )
         .pauseFor(500)
         .changeDelay(30)

@@ -22,9 +22,7 @@ function Intro() {
       <AnimatedTitle>Dariusz Berer</AnimatedTitle>
       <AnimatedSubtitle>Frontend Developer</AnimatedSubtitle>
       <TypewriterText />
-      <AnimatedScrollArrow 
-        targetId="skills" 
-      />
+      <AnimatedScrollArrow targetId='skills' />
     </Container>
   );
 }
