@@ -7,7 +7,7 @@ const StyledFloatingContactBar = styled.div`
   top: 20px;
   right: 20px;
   display: flex;
-  gap: 12px;
+  gap: 14px;
   z-index: 1000;
   opacity: 0;
   backdrop-filter: blur(10px);
@@ -19,8 +19,8 @@ const StyledFloatingContactBar = styled.div`
       .join(', ')},
     0.6
   );
-  padding: 12px;
-  border-radius: 20px;
+  padding: 14px;
+  border-radius: 24px;
   border: 1px solid
     rgba(
       ${colors.accent.primary
@@ -50,8 +50,8 @@ const StyledFloatingContactBar = styled.div`
 `;
 
 const FloatingContactIcon = styled.a`
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +60,7 @@ const FloatingContactIcon = styled.a`
     ${colors.utils.primaryAccent20} 0%,
     ${colors.utils.secondaryAccent20} 100%
   );
-  border-radius: 12px;
+  border-radius: 14px;
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -95,7 +95,7 @@ const FloatingContactIcon = styled.a`
     position: absolute;
     inset: 1px;
     background: ${colors.background.secondary};
-    border-radius: 11px;
+    border-radius: 13px;
     z-index: 1;
     transition: background 0.3s ease;
   }
@@ -103,8 +103,8 @@ const FloatingContactIcon = styled.a`
   svg {
     position: relative;
     z-index: 2;
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     color: ${colors.accent.primary};
     transition: color 0.3s ease;
   }
@@ -148,7 +148,7 @@ function FloatingContactBar({
         rel='noopener noreferrer'
         title='GitHub'
       >
-        <GitHubIcon size={18} />
+        <GitHubIcon size={22} />
       </FloatingContactIcon>
 
       <FloatingContactIcon
@@ -157,18 +157,18 @@ function FloatingContactBar({
         rel='noopener noreferrer'
         title='LinkedIn'
       >
-        <LinkedInIcon size={18} />
+        <LinkedInIcon size={22} />
       </FloatingContactIcon>
 
       <FloatingContactIcon href={`mailto:${email}`} title='Email'>
-        <EmailIcon size={18} />
+        <EmailIcon size={22} />
       </FloatingContactIcon>
 
       <FloatingContactIcon
         href={`tel:${phone.replace(/\s/g, '')}`}
         title='Phone'
       >
-        <PhoneIcon size={18} />
+        <PhoneIcon size={22} />
       </FloatingContactIcon>
     </StyledFloatingContactBar>
   );
