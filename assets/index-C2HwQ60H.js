@@ -221,7 +221,7 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
   }
 `,$=e.div`
   position: absolute;
-  bottom: 60px;
+  bottom: 72px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
