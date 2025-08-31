@@ -21,27 +21,16 @@ const Card = styled.div`
   }
 `;
 
-const ProjectImage = styled.div`
+const ProjectImage = styled.img`
   width: 100%;
   height: 200px;
-  background: linear-gradient(
-    135deg,
-    ${colors.utils.primaryAccent20} 0%,
-    ${colors.utils.secondaryAccent20} 100%
-  );
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.3s ease;
 
-  &::before {
-    content: '</>';
-    font-size: 3rem;
-    color: ${colors.accent.primary};
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    opacity: 0.3;
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
@@ -160,7 +149,12 @@ interface ProjectCardProps {
 function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card>
-      <ProjectImage />
+      {project.imageUrl && (
+        <ProjectImage
+          src={project.imageUrl}
+          alt={`${project.title} screenshot`}
+        />
+      )}
       <ProjectContent>
         <ProjectTitle>{project.title}</ProjectTitle>
         <ProjectDescription>{project.description}</ProjectDescription>

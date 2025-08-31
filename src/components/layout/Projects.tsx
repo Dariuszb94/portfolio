@@ -57,37 +57,50 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Interactive Portfolio',
+    title: 'Lux Cars',
     description:
-      'A modern, responsive portfolio website built with React and TypeScript. Features interactive particle effects, smooth animations, and optimized performance.',
-    technologies: ['React', 'TypeScript', 'Styled Components', 'Vite'],
-    liveUrl: 'https://dariuszb94.github.io/portfolio/',
-    githubUrl: 'https://github.com/Dariuszb94/portfolio',
+      'The dealership app lets you find your dream car. You can sort, filter cars and calculate loans for them. Saving your favorite offers is also possible.',
+    technologies: [
+      'HTML',
+      'CSS',
+      'React',
+      'Redux',
+      'IndexedDB',
+      'Styled-Components',
+    ],
+    liveUrl: 'https://dariuszb94.github.io/Lux-cars/',
+    githubUrl: 'https://github.com/Dariuszb94/Lux-cars',
+    imageUrl: '/portfolio/images/car-dealer.jpg',
   },
   {
     id: 2,
-    title: 'Self Presentation Website',
+    title: 'Pokemon Pokedex',
     description:
-      'Professional portfolio website showcasing skills, projects, and experience with elegant design and smooth user interactions.',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
-    liveUrl: 'https://dariuszb94.github.io/Self-presentation/',
-    githubUrl: 'https://github.com/Dariuszb94/Self-presentation',
+      'Angular-based Pokedex application featuring 151 Pokemon with detailed information. Includes search functionality, responsive design, and smooth animations with PokeAPI integration.',
+    technologies: ['Angular', 'TypeScript', 'RxJS', 'Bootstrap', 'PokeAPI'],
+    liveUrl: 'https://dariuszb94.github.io/pokemon/',
+    githubUrl: 'https://github.com/Dariuszb94/pokemon',
+    imageUrl: '/portfolio/images/pokemon.jpg',
   },
   {
     id: 3,
-    title: 'E-Commerce Platform',
+    title: 'Vue Quiz Application',
     description:
-      'Full-stack e-commerce solution with modern UI/UX, shopping cart functionality, and secure payment integration.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
-    githubUrl: 'https://github.com/Dariuszb94/ecommerce-app',
+      'Interactive quiz application built with Vue.js featuring dynamic questions, scoring system, and engaging user interface for educational content.',
+    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'HTML5'],
+    liveUrl: 'https://dariuszb94.github.io/vue-quiz/',
+    githubUrl: 'https://github.com/Dariuszb94/vue-quiz',
+    imageUrl: '/portfolio/images/vue-quiz.jpg',
   },
   {
     id: 4,
-    title: 'Task Management App',
+    title: 'Cloth Shop E-Commerce',
     description:
-      'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    technologies: ['Vue.js', 'Firebase', 'Vuetify', 'Socket.io'],
-    githubUrl: 'https://github.com/Dariuszb94/task-manager',
+      'E-commerce platform for clothing retail with modern shopping experience. Features product catalog, shopping cart, and responsive design for optimal user experience.',
+    technologies: ['React', 'JavaScript', 'CSS3', 'E-commerce'],
+    liveUrl: 'https://dariuszb94.github.io/cloth-shop/',
+    githubUrl: 'https://github.com/Dariuszb94/cloth-shop',
+    imageUrl: '/portfolio/images/cloth-shop.jpg',
   },
 ];
 
