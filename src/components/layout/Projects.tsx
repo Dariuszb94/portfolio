@@ -74,20 +74,20 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Pokemon Pokedex',
+    title: 'Translations',
     description:
-      'Angular-based Pokedex application featuring 151 Pokemon with detailed information. Includes search functionality, responsive design, and smooth animations with PokeAPI integration.',
-    technologies: ['Angular', 'TypeScript', 'RxJS', 'Bootstrap', 'PokeAPI'],
-    liveUrl: 'https://dariuszb94.github.io/pokemon/',
-    githubUrl: 'https://github.com/Dariuszb94/pokemon',
-    imageUrl: '/portfolio/images/pokemon.jpg',
+      'The app lets you calculate the prices for translations. An e-mail with the calculation will be sent to you when you request it.',
+    technologies: ['React', 'Hooks', 'SCSS', 'Jest', 'Enzyme', 'Email.js'],
+    liveUrl: 'https://dariuszb94.github.io/translations/#/',
+    githubUrl: 'https://github.com/Dariuszb94/translations/tree/master',
+    imageUrl: '/portfolio/images/translations.jpg',
   },
   {
     id: 3,
     title: 'Vue Quiz Application',
     description:
       'Interactive quiz application built with Vue.js featuring dynamic questions, scoring system, and engaging user interface for educational content.',
-    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'HTML5'],
+    technologies: ['Vue', 'JavaScript', 'CSS3', 'HTML5', 'Firebase'],
     liveUrl: 'https://dariuszb94.github.io/vue-quiz/',
     githubUrl: 'https://github.com/Dariuszb94/vue-quiz',
     imageUrl: '/portfolio/images/vue-quiz.jpg',
@@ -97,7 +97,7 @@ const projects: Project[] = [
     title: 'Cloth Shop E-Commerce',
     description:
       'E-commerce platform for clothing retail with modern shopping experience. Features product catalog, shopping cart, and responsive design for optimal user experience.',
-    technologies: ['React', 'JavaScript', 'CSS3', 'E-commerce'],
+    technologies: ['Vue', 'Vuex', 'JavaScript', 'CSS3'],
     liveUrl: 'https://dariuszb94.github.io/cloth-shop/',
     githubUrl: 'https://github.com/Dariuszb94/cloth-shop',
     imageUrl: '/portfolio/images/cloth-shop.jpg',
