@@ -177,6 +177,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               href={project.liveUrl}
               target='_blank'
               rel='noopener noreferrer'
+              aria-label={`View live demo of ${project.title}`}
             >
               Live Demo
             </LiveLink>
@@ -186,6 +187,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             href={project.githubUrl}
             target='_blank'
             rel='noopener noreferrer'
+            aria-label={`View source code for ${project.title} on GitHub`}
           >
             <GitHubIcon />
             Code

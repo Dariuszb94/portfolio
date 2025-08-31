@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SectionHeader from '../ui/SectionHeader';
-import ProjectCard from '../ui/ProjectCard';
+import { ProjectCard } from '../ui';
 
 const fadeInUp = keyframes`
   from { 
