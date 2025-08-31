@@ -377,7 +377,7 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
   &:nth-child(4) {
     animation-delay: 0.6s;
   }
-`,Y=({targetId:e})=>g.jsx(R,{onClick:()=>{const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth",block:"start"})},children:g.jsxs(I,{children:[g.jsx(W,{}),g.jsx(V,{}),g.jsx(H,{}),g.jsx(U,{children:g.jsx(B,{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"3",strokeLinecap:"round",strokeLinejoin:"round",children:g.jsx("path",{d:"M6 9l6 6 6-6"})})}),g.jsx(Q,{}),g.jsx(Q,{}),g.jsx(Q,{}),g.jsx(Q,{})]})}),q=e.div`
+`,Y=({targetId:e})=>g.jsx(R,{onClick:()=>{const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth",block:"start"})},children:g.jsxs(I,{children:[g.jsx(W,{}),g.jsx(V,{}),g.jsx(H,{}),g.jsx(U,{"aria-label":`Scroll to ${e} section`,children:g.jsx(B,{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"3",strokeLinecap:"round",strokeLinejoin:"round",children:g.jsx("path",{d:"M6 9l6 6 6-6"})})}),g.jsx(Q,{}),g.jsx(Q,{}),g.jsx(Q,{}),g.jsx(Q,{})]})}),q=e.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -537,183 +537,7 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
 `,ue=e.div`
   display: inline-block;
   animation: ${ee} 3s ease-in-out infinite;
-`,se=[{name:"React",category:"frontend"},{name:"TypeScript",category:"frontend"},{name:"JavaScript (ES6+)",category:"frontend"},{name:"Vue.js",category:"frontend"},{name:"Angular",category:"frontend"},{name:"HTML5 & CSS3",category:"frontend"},{name:"Sass/SCSS",category:"frontend"},{name:"Styled Components",category:"frontend"},{name:"Tailwind CSS",category:"frontend"},{name:"Next.js",category:"frontend"},{name:"Vite",category:"frontend"},{name:"Webpack",category:"frontend"},{name:"Node.js",category:"backend"},{name:"PHP",category:"backend"},{name:"REST APIs",category:"backend"},{name:"GraphQL",category:"backend"},{name:"Git & GitHub",category:"tools"},{name:"VS Code",category:"tools"},{name:"Figma",category:"tools"},{name:"Jest",category:"tools"},{name:"Cypress",category:"tools"},{name:"ESLint & Prettier",category:"tools"},{name:"Responsive Design",category:"tools"}],ce={frontend:{title:"🚀 Frontend Development",description:"Modern web interfaces"},backend:{title:"⚙️ Backend & Database",description:"Server-side solutions"},tools:{title:"🛠️ Tools & Testing",description:"Development ecosystem"}};function de(){const e=se.reduce((e,t)=>(e[t.category]||(e[t.category]=[]),e[t.category].push(t),e),{});return g.jsxs(ne,{id:"skills",children:[g.jsx(Z,{title:"Skills & Technologies",subtitle:"Crafting digital experiences with modern tools and technologies"}),g.jsx(re,{children:Object.entries(e).map(([e,t])=>g.jsxs(ae,{children:[g.jsx(le,{children:g.jsx(ue,{children:ce[e].title})}),g.jsx(oe,{children:t.map(e=>g.jsx(ie,{children:e.name},e.name))})]},e))})]})}function fe({size:e=24,className:t}){return g.jsx("svg",{viewBox:"0 0 24 24",fill:"currentColor",width:e,height:e,className:t,children:g.jsx("path",{d:"M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"})})}function pe({size:e=24,className:t}){return g.jsx("svg",{viewBox:"0 0 24 24",fill:"currentColor",width:e,height:e,className:t,children:g.jsx("path",{d:"M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"})})}function me({size:e=24,className:t}){return g.jsxs("svg",{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",width:e,height:e,className:t,children:[g.jsx("path",{d:"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"}),g.jsx("polyline",{points:"22,6 12,13 2,6"})]})}function he({size:e=24,className:t}){return g.jsx("svg",{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",width:e,height:e,className:t,children:g.jsx("path",{d:"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"})})}const ge=e.div`
-  background: linear-gradient(
-    135deg,
-    ${E.background.secondary} 0%,
-    ${E.background.tertiary} 100%
-  );
-  border-radius: 20px;
-  padding: 2rem;
-  border: 1px solid ${E.utils.primaryAccent20};
-  backdrop-filter: blur(10px);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-
-  &:hover {
-    border-color: ${E.accent.primary};
-    box-shadow: 0 8px 32px ${E.utils.primaryAccent20};
-  }
-`,ye=e.div`
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(
-    135deg,
-    ${E.utils.primaryAccent20} 0%,
-    ${E.utils.secondaryAccent20} 100%
-  );
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &::before {
-    content: '</>';
-    font-size: 3rem;
-    color: ${E.accent.primary};
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    opacity: 0.3;
-  }
-`,be=e.div``,ve=e.h3`
-  color: ${E.accent.primary};
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-
-  ${ge}:hover & {
-    color: ${E.accent.secondary};
-  }
-`,ke=e.p`
-  color: ${E.text.secondary};
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-`,we=e.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-`,xe=e.span`
-  background: linear-gradient(
-    135deg,
-    ${E.utils.primaryAccent20} 0%,
-    ${E.utils.secondaryAccent20} 100%
-  );
-  color: ${E.text.primary};
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid ${E.utils.primaryAccent30};
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: linear-gradient(
-      135deg,
-      ${E.utils.primaryAccent30} 0%,
-      ${E.utils.secondaryAccent40} 100%
-    );
-  }
-`,Se=e.div`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-`,Ee=e.a`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-`,ze=e(Ee)`
-  background: linear-gradient(
-    135deg,
-    ${E.accent.primary} 0%,
-    ${E.accent.secondary} 100%
-  );
-  color: ${E.background.primary};
-
-  &:hover {
-    box-shadow: 0 10px 25px ${E.utils.primaryAccent30};
-  }
-`,Ce=e(Ee)`
-  background: transparent;
-  color: ${E.text.primary};
-  border: 1px solid ${E.utils.primaryAccent30};
-
-  &:hover {
-    background: ${E.utils.primaryAccent20};
-    border-color: ${E.accent.primary};
-  }
-
-  svg {
-    width: 18px;
-    height: 18px;
-  }
-`;function Pe({project:e}){return g.jsxs(ge,{children:[g.jsx(ye,{}),g.jsxs(be,{children:[g.jsx(ve,{children:e.title}),g.jsx(ke,{children:e.description}),g.jsx(we,{children:e.technologies.map(e=>g.jsx(xe,{children:e},e))}),g.jsxs(Se,{children:[e.liveUrl&&g.jsx(ze,{href:e.liveUrl,target:"_blank",rel:"noopener noreferrer",children:"Live Demo"}),g.jsxs(Ce,{href:e.githubUrl,target:"_blank",rel:"noopener noreferrer",children:[g.jsx(fe,{}),"Code"]})]})]})]})}const Ne=r`
-  from { 
-    opacity: 0; 
-    transform: translateY(30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-`,Le=e.section`
-  padding: 6rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-`,Te=e.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  margin-top: 3rem;
-  max-width: 1000px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-`,_e=e.div`
-  animation: ${Ne} 0.6s ease-out;
-`,Ae=[{id:1,title:"Interactive Portfolio",description:"A modern, responsive portfolio website built with React and TypeScript. Features interactive particle effects, smooth animations, and optimized performance.",technologies:["React","TypeScript","Styled Components","Vite"],liveUrl:"https://dariuszb94.github.io/portfolio/",githubUrl:"https://github.com/Dariuszb94/portfolio"},{id:2,title:"Self Presentation Website",description:"Professional portfolio website showcasing skills, projects, and experience with elegant design and smooth user interactions.",technologies:["HTML5","CSS3","JavaScript","Bootstrap"],liveUrl:"https://dariuszb94.github.io/Self-presentation/",githubUrl:"https://github.com/Dariuszb94/Self-presentation"},{id:3,title:"E-Commerce Platform",description:"Full-stack e-commerce solution with modern UI/UX, shopping cart functionality, and secure payment integration.",technologies:["React","Node.js","MongoDB","Stripe API"],githubUrl:"https://github.com/Dariuszb94/ecommerce-app"},{id:4,title:"Task Management App",description:"Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",technologies:["Vue.js","Firebase","Vuetify","Socket.io"],githubUrl:"https://github.com/Dariuszb94/task-manager"}],Me=a.memo(()=>g.jsx(Le,{id:"projects",children:g.jsxs(_e,{children:[g.jsx(Z,{title:"Featured Projects",subtitle:"Showcasing my passion for creating innovative digital solutions"}),g.jsx(Te,{children:Ae.map(e=>g.jsx(Pe,{project:e},e.id))})]})}));Me.displayName="Projects";const je=e.div`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0;
-`,Fe=e.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`,De=e.span`
-  font-size: 0.9rem;
-  color: ${E.text.tertiary};
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-`,Oe=e.a`
-  font-size: 1.1rem;
-  color: ${E.text.primary};
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: ${E.accent.primary};
-  }
-`;function $e({icon:e,label:t,value:n,href:r}){return g.jsxs(je,{children:[e,g.jsxs(Fe,{children:[g.jsx(De,{children:t}),g.jsx(Oe,{href:r,target:r.startsWith("http")?"_blank":void 0,rel:r.startsWith("http")?"noopener noreferrer":void 0,children:n})]})]})}const Re=e.div`
+`,se=[{name:"React",category:"frontend"},{name:"TypeScript",category:"frontend"},{name:"JavaScript (ES6+)",category:"frontend"},{name:"Vue.js",category:"frontend"},{name:"Angular",category:"frontend"},{name:"HTML5 & CSS3",category:"frontend"},{name:"Sass/SCSS",category:"frontend"},{name:"Styled Components",category:"frontend"},{name:"Tailwind CSS",category:"frontend"},{name:"Next.js",category:"frontend"},{name:"Vite",category:"frontend"},{name:"Webpack",category:"frontend"},{name:"Node.js",category:"backend"},{name:"PHP",category:"backend"},{name:"REST APIs",category:"backend"},{name:"GraphQL",category:"backend"},{name:"Git & GitHub",category:"tools"},{name:"VS Code",category:"tools"},{name:"Figma",category:"tools"},{name:"Jest",category:"tools"},{name:"Cypress",category:"tools"},{name:"ESLint & Prettier",category:"tools"},{name:"Responsive Design",category:"tools"}],ce={frontend:{title:"🚀 Frontend Development",description:"Modern web interfaces"},backend:{title:"⚙️ Backend & Database",description:"Server-side solutions"},tools:{title:"🛠️ Tools & Testing",description:"Development ecosystem"}};function de(){const e=se.reduce((e,t)=>(e[t.category]||(e[t.category]=[]),e[t.category].push(t),e),{});return g.jsxs(ne,{id:"skills",children:[g.jsx(Z,{title:"Skills & Technologies",subtitle:"Crafting digital experiences with modern tools and technologies"}),g.jsx(re,{children:Object.entries(e).map(([e,t])=>g.jsxs(ae,{children:[g.jsx(le,{children:g.jsx(ue,{children:ce[e].title})}),g.jsx(oe,{children:t.map(e=>g.jsx(ie,{children:e.name},e.name))})]},e))})]})}const fe=e.div`
   width: 56px;
   min-width: 56px;
   height: 56px;
@@ -745,7 +569,183 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
     height: 24px;
     color: ${E.accent.primary};
   }
-`;function Ie({children:e}){return g.jsx(Re,{children:e})}const Ue=e.div`
+`;function pe({children:e}){return g.jsx(fe,{children:e})}const me=e.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0;
+`,he=e.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`,ge=e.span`
+  font-size: 0.9rem;
+  color: ${E.text.tertiary};
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+`,ye=e.a`
+  font-size: 1.1rem;
+  color: ${E.text.primary};
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: ${E.accent.primary};
+  }
+`;function be({icon:e,label:t,value:n,href:r}){return g.jsxs(me,{children:[e,g.jsxs(he,{children:[g.jsx(ge,{children:t}),g.jsx(ye,{href:r,target:r.startsWith("http")?"_blank":void 0,rel:r.startsWith("http")?"noopener noreferrer":void 0,children:n})]})]})}function ve({size:e=24,className:t}){return g.jsx("svg",{viewBox:"0 0 24 24",fill:"currentColor",width:e,height:e,className:t,children:g.jsx("path",{d:"M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"})})}function ke({size:e=24,className:t}){return g.jsx("svg",{viewBox:"0 0 24 24",fill:"currentColor",width:e,height:e,className:t,children:g.jsx("path",{d:"M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"})})}function we({size:e=24,className:t}){return g.jsxs("svg",{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",width:e,height:e,className:t,children:[g.jsx("path",{d:"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"}),g.jsx("polyline",{points:"22,6 12,13 2,6"})]})}function xe({size:e=24,className:t}){return g.jsx("svg",{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",width:e,height:e,className:t,children:g.jsx("path",{d:"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"})})}const Se=e.div`
+  background: linear-gradient(
+    135deg,
+    ${E.background.secondary} 0%,
+    ${E.background.tertiary} 100%
+  );
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid ${E.utils.primaryAccent20};
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    border-color: ${E.accent.primary};
+    box-shadow: 0 8px 32px ${E.utils.primaryAccent20};
+  }
+`,Ee=e.div`
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    ${E.utils.primaryAccent20} 0%,
+    ${E.utils.secondaryAccent20} 100%
+  );
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: '</>';
+    font-size: 3rem;
+    color: ${E.accent.primary};
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    opacity: 0.3;
+  }
+`,ze=e.div``,Ce=e.h3`
+  color: ${E.accent.primary};
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+
+  ${Se}:hover & {
+    color: ${E.accent.secondary};
+  }
+`,Pe=e.p`
+  color: ${E.text.secondary};
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+`,Ne=e.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+`,Le=e.span`
+  background: linear-gradient(
+    135deg,
+    ${E.utils.primaryAccent20} 0%,
+    ${E.utils.secondaryAccent20} 100%
+  );
+  color: ${E.text.primary};
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid ${E.utils.primaryAccent30};
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      ${E.utils.primaryAccent30} 0%,
+      ${E.utils.secondaryAccent40} 100%
+    );
+  }
+`,Te=e.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`,_e=e.a`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+`,Ae=e(_e)`
+  background: linear-gradient(
+    135deg,
+    ${E.accent.primary} 0%,
+    ${E.accent.secondary} 100%
+  );
+  color: ${E.background.primary};
+
+  &:hover {
+    box-shadow: 0 10px 25px ${E.utils.primaryAccent30};
+  }
+`,Me=e(_e)`
+  background: transparent;
+  color: ${E.text.primary};
+  border: 1px solid ${E.utils.primaryAccent30};
+
+  &:hover {
+    background: ${E.utils.primaryAccent20};
+    border-color: ${E.accent.primary};
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+`;function je({project:e}){return g.jsxs(Se,{children:[g.jsx(Ee,{}),g.jsxs(ze,{children:[g.jsx(Ce,{children:e.title}),g.jsx(Pe,{children:e.description}),g.jsx(Ne,{children:e.technologies.map(e=>g.jsx(Le,{children:e},e))}),g.jsxs(Te,{children:[e.liveUrl&&g.jsx(Ae,{href:e.liveUrl,target:"_blank",rel:"noopener noreferrer","aria-label":`View live demo of ${e.title}`,children:"Live Demo"}),g.jsxs(Me,{href:e.githubUrl,target:"_blank",rel:"noopener noreferrer","aria-label":`View source code for ${e.title} on GitHub`,children:[g.jsx(ve,{}),"Code"]})]})]})]})}const Fe=r`
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+`,De=e.section`
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+`,Oe=e.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-top: 3rem;
+  max-width: 1000px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+`,$e=e.div`
+  animation: ${Fe} 0.6s ease-out;
+`,Re=[{id:1,title:"Interactive Portfolio",description:"A modern, responsive portfolio website built with React and TypeScript. Features interactive particle effects, smooth animations, and optimized performance.",technologies:["React","TypeScript","Styled Components","Vite"],liveUrl:"https://dariuszb94.github.io/portfolio/",githubUrl:"https://github.com/Dariuszb94/portfolio"},{id:2,title:"Self Presentation Website",description:"Professional portfolio website showcasing skills, projects, and experience with elegant design and smooth user interactions.",technologies:["HTML5","CSS3","JavaScript","Bootstrap"],liveUrl:"https://dariuszb94.github.io/Self-presentation/",githubUrl:"https://github.com/Dariuszb94/Self-presentation"},{id:3,title:"E-Commerce Platform",description:"Full-stack e-commerce solution with modern UI/UX, shopping cart functionality, and secure payment integration.",technologies:["React","Node.js","MongoDB","Stripe API"],githubUrl:"https://github.com/Dariuszb94/ecommerce-app"},{id:4,title:"Task Management App",description:"Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",technologies:["Vue.js","Firebase","Vuetify","Socket.io"],githubUrl:"https://github.com/Dariuszb94/task-manager"}],Ie=a.memo(()=>g.jsx(De,{id:"projects",children:g.jsxs($e,{children:[g.jsx(Z,{title:"Featured Projects",subtitle:"Showcasing my passion for creating innovative digital solutions"}),g.jsx(Oe,{children:Re.map(e=>g.jsx(je,{project:e},e.id))})]})}));Ie.displayName="Projects";const Ue=e.div`
   position: fixed;
   top: 20px;
   right: 20px;
@@ -858,7 +858,7 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
       color: ${E.background.primary};
     }
   }
-`;function Ve({email:e="dariusz.berer@gmail.com",phone:t="+48 535 262 562",linkedin:n="https://linkedin.com/in/berer",github:r="https://github.com/Dariuszb94"}){return g.jsxs(Ue,{children:[g.jsx(Be,{href:r,target:"_blank",rel:"noopener noreferrer",title:"GitHub",children:g.jsx(fe,{size:22})}),g.jsx(Be,{href:n,target:"_blank",rel:"noopener noreferrer",title:"LinkedIn",children:g.jsx(pe,{size:22})}),g.jsx(Be,{href:`mailto:${e}`,title:"Email",children:g.jsx(me,{size:22})}),g.jsx(Be,{href:`tel:${t.replace(/\s/g,"")}`,title:"Phone",children:g.jsx(he,{size:22})})]})}const He=e.section`
+`;function Ve({email:e="dariusz.berer@gmail.com",phone:t="+48 535 262 562",linkedin:n="https://linkedin.com/in/berer",github:r="https://github.com/Dariuszb94"}){return g.jsxs(Ue,{children:[g.jsx(Be,{href:r,target:"_blank",rel:"noopener noreferrer",title:"GitHub",children:g.jsx(ve,{size:22})}),g.jsx(Be,{href:n,target:"_blank",rel:"noopener noreferrer",title:"LinkedIn",children:g.jsx(ke,{size:22})}),g.jsx(Be,{href:`mailto:${e}`,title:"Email",children:g.jsx(we,{size:22})}),g.jsx(Be,{href:`tel:${t.replace(/\s/g,"")}`,title:"Phone",children:g.jsx(xe,{size:22})})]})}const He=e.section`
   margin-top: 6rem;
   padding: 4rem 2rem;
   display: flex;
@@ -884,7 +884,7 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-`;function Ye({email:e="dariusz.berer@gmail.com",phone:t="+48 535 262 562",linkedin:n="https://linkedin.com/in/berer",github:r="https://github.com/Dariuszb94"}){return g.jsxs(g.Fragment,{children:[g.jsx(Ve,{email:e,phone:t,linkedin:n,github:r}),g.jsxs(He,{children:[g.jsx(Z,{title:"Let's Create Something Amazing",subtitle:"Ready to bring your ideas to life? I'm here to help you build exceptional digital experiences."}),g.jsx(We,{children:g.jsxs(Qe,{children:[g.jsx($e,{icon:g.jsx(Ie,{children:g.jsx(fe,{})}),label:"GitHub",value:"@Dariuszb94",href:r}),g.jsx($e,{icon:g.jsx(Ie,{children:g.jsx(pe,{})}),label:"LinkedIn",value:"/in/berer/",href:n}),g.jsx($e,{icon:g.jsx(Ie,{children:g.jsx(me,{})}),label:"Email",value:e,href:`mailto:${e}`}),g.jsx($e,{icon:g.jsx(Ie,{children:g.jsx(he,{})}),label:"Phone",value:t,href:`tel:${t.replace(/\s/g,"")}`})]})})]})]})}const qe=()=>{const e=n.useRef(null),t=n.useRef(0),r=n.useRef([]),l=n.useRef({x:0,y:0}),o=n.useRef(0),[i,u]=n.useState(!1),s=a.useMemo(()=>["{","}","[","]","(",")","<",">","=","+","-","*","/","%","&","|","!","?",";",":",".",",","'",'"',"$","#","@","~","^","_","\\","0","1","x","y","z","i","j","k"],[]),c=a.useMemo(()=>["const","let","var","function","return","if","else","for","while","class","import","export","async","await"],[]),d=a.useMemo(()=>[E.accent.primary,E.accent.secondary,E.accent.tertiary,E.text.primary,E.text.secondary,E.utils.primaryAccent60.replace("0.6","1"),E.utils.secondaryAccent40.replace("0.4","1"),"#B4D4FF","#C7D2FE","#DBEAFE"],[]),f=n.useCallback((e,t,n=!1)=>{const r=n?c[Math.floor(Math.random()*c.length)]:s[Math.floor(Math.random()*s.length)],a=Math.random()*Math.PI*2,l=2*Math.random()+1,o=n?120:60;return{id:Math.random(),x:e,y:t,char:r,opacity:.8,size:n?8*Math.random()+14:6*Math.random()+10,vx:Math.cos(a)*l,vy:Math.sin(a)*l,life:o,maxLife:o,color:d[Math.floor(Math.random()*d.length)]}},[s,c,d]),p=n.useCallback(()=>{const t=e.current;t&&(t.width=window.innerWidth,t.height=window.innerHeight)},[]),m=n.useCallback(e=>{if(!i){if(l.current={x:e.clientX,y:e.clientY},Math.random()<.4){const t=10*(Math.random()-.5),n=10*(Math.random()-.5);r.current.push(f(e.clientX+t,e.clientY+n))}if(Math.random()<.08){const t=8*(Math.random()-.5),n=8*(Math.random()-.5);r.current.push(f(e.clientX+t,e.clientY+n,!0))}}},[f,i]),h=n.useCallback(e=>{u(!0);const t=e.touches[0];t&&(l.current={x:t.clientX,y:t.clientY},Math.random()<.2&&r.current.push(f(t.clientX,t.clientY)),Math.random()<.05&&r.current.push(f(t.clientX,t.clientY,!0)))},[f]),y=n.useCallback(e=>{for(let t=0;t<8;t++){const t=15*(Math.random()-.5),n=15*(Math.random()-.5);r.current.push(f(e.clientX+t,e.clientY+n))}r.current.push(f(e.clientX,e.clientY,!0))},[f]),b=n.useCallback(e=>{u(!0);const t=e.touches[0];if(t){for(let e=0;e<6;e++)r.current.push(f(t.clientX,t.clientY));r.current.push(f(t.clientX,t.clientY,!0))}},[f]),v=n.useCallback(n=>{const a=e.current,l=a?.getContext("2d");if(!a||!l)return;const i=n-o.current;o.current=n,l.fillStyle="rgba(11, 20, 38, 0.05)",l.fillRect(0,0,a.width,a.height),r.current=r.current.filter(e=>(e.x+=e.vx,e.y+=e.vy,e.life-=i/16,e.opacity=e.life/e.maxLife,e.vy+=.05,e.size*=.998,e.opacity>0&&(l.save(),l.globalAlpha=.6*e.opacity,l.font=`${e.size}px 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace`,l.textAlign="center",l.textBaseline="middle",l.shadowColor=e.color,l.shadowBlur=.4*e.size,l.fillStyle=e.color,l.globalAlpha=.8*e.opacity,l.fillText(e.char,e.x,e.y),l.shadowBlur=.1*e.size,l.fillStyle="#ffffff",l.globalAlpha=.3*e.opacity,l.fillText(e.char,e.x,e.y),l.restore()),e.life>0&&e.opacity>.01)),t.current=requestAnimationFrame(v)},[]);return n.useEffect(()=>{if(e.current)return p(),document.addEventListener("mousemove",m),document.addEventListener("click",y),document.addEventListener("touchmove",h,{passive:!0}),document.addEventListener("touchstart",b,{passive:!0}),window.addEventListener("resize",p),t.current=requestAnimationFrame(v),()=>{document.removeEventListener("mousemove",m),document.removeEventListener("click",y),document.removeEventListener("touchmove",h),document.removeEventListener("touchstart",b),window.removeEventListener("resize",p),t.current&&cancelAnimationFrame(t.current)}},[p,m,y,h,b,v]),g.jsx("canvas",{ref:e,style:{position:"fixed",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none",zIndex:9999,mixBlendMode:"screen"}})},Xe=r`
+`;function Ye({email:e="dariusz.berer@gmail.com",phone:t="+48 535 262 562",linkedin:n="https://linkedin.com/in/berer",github:r="https://github.com/Dariuszb94"}){return g.jsxs(g.Fragment,{children:[g.jsx(Ve,{email:e,phone:t,linkedin:n,github:r}),g.jsxs(He,{children:[g.jsx(Z,{title:"Let's Create Something Amazing",subtitle:"Ready to bring your ideas to life? I'm here to help you build exceptional digital experiences."}),g.jsx(We,{children:g.jsxs(Qe,{children:[g.jsx(be,{icon:g.jsx(pe,{children:g.jsx(ve,{})}),label:"GitHub",value:"@Dariuszb94",href:r}),g.jsx(be,{icon:g.jsx(pe,{children:g.jsx(ke,{})}),label:"LinkedIn",value:"/in/berer/",href:n}),g.jsx(be,{icon:g.jsx(pe,{children:g.jsx(we,{})}),label:"Email",value:e,href:`mailto:${e}`}),g.jsx(be,{icon:g.jsx(pe,{children:g.jsx(xe,{})}),label:"Phone",value:t,href:`tel:${t.replace(/\s/g,"")}`})]})})]})]})}const qe=()=>{const e=n.useRef(null),t=n.useRef(0),r=n.useRef([]),l=n.useRef({x:0,y:0}),o=n.useRef(0),[i,u]=n.useState(!1),s=a.useMemo(()=>["{","}","[","]","(",")","<",">","=","+","-","*","/","%","&","|","!","?",";",":",".",",","'",'"',"$","#","@","~","^","_","\\","0","1","x","y","z","i","j","k"],[]),c=a.useMemo(()=>["const","let","var","function","return","if","else","for","while","class","import","export","async","await"],[]),d=a.useMemo(()=>[E.accent.primary,E.accent.secondary,E.accent.tertiary,E.text.primary,E.text.secondary,E.utils.primaryAccent60.replace("0.6","1"),E.utils.secondaryAccent40.replace("0.4","1"),"#B4D4FF","#C7D2FE","#DBEAFE"],[]),f=n.useCallback((e,t,n=!1)=>{const r=n?c[Math.floor(Math.random()*c.length)]:s[Math.floor(Math.random()*s.length)],a=Math.random()*Math.PI*2,l=2*Math.random()+1,o=n?120:60;return{id:Math.random(),x:e,y:t,char:r,opacity:.8,size:n?8*Math.random()+14:6*Math.random()+10,vx:Math.cos(a)*l,vy:Math.sin(a)*l,life:o,maxLife:o,color:d[Math.floor(Math.random()*d.length)]}},[s,c,d]),p=n.useCallback(()=>{const t=e.current;t&&(t.width=window.innerWidth,t.height=window.innerHeight)},[]),m=n.useCallback(e=>{if(!i){if(l.current={x:e.clientX,y:e.clientY},Math.random()<.4){const t=10*(Math.random()-.5),n=10*(Math.random()-.5);r.current.push(f(e.clientX+t,e.clientY+n))}if(Math.random()<.08){const t=8*(Math.random()-.5),n=8*(Math.random()-.5);r.current.push(f(e.clientX+t,e.clientY+n,!0))}}},[f,i]),h=n.useCallback(e=>{u(!0);const t=e.touches[0];t&&(l.current={x:t.clientX,y:t.clientY},Math.random()<.2&&r.current.push(f(t.clientX,t.clientY)),Math.random()<.05&&r.current.push(f(t.clientX,t.clientY,!0)))},[f]),y=n.useCallback(e=>{for(let t=0;t<8;t++){const t=15*(Math.random()-.5),n=15*(Math.random()-.5);r.current.push(f(e.clientX+t,e.clientY+n))}r.current.push(f(e.clientX,e.clientY,!0))},[f]),b=n.useCallback(e=>{u(!0);const t=e.touches[0];if(t){for(let e=0;e<6;e++)r.current.push(f(t.clientX,t.clientY));r.current.push(f(t.clientX,t.clientY,!0))}},[f]),v=n.useCallback(n=>{const a=e.current,l=a?.getContext("2d");if(!a||!l)return;const i=n-o.current;o.current=n,l.fillStyle="rgba(11, 20, 38, 0.05)",l.fillRect(0,0,a.width,a.height),r.current=r.current.filter(e=>(e.x+=e.vx,e.y+=e.vy,e.life-=i/16,e.opacity=e.life/e.maxLife,e.vy+=.05,e.size*=.998,e.opacity>0&&(l.save(),l.globalAlpha=.6*e.opacity,l.font=`${e.size}px 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace`,l.textAlign="center",l.textBaseline="middle",l.shadowColor=e.color,l.shadowBlur=.4*e.size,l.fillStyle=e.color,l.globalAlpha=.8*e.opacity,l.fillText(e.char,e.x,e.y),l.shadowBlur=.1*e.size,l.fillStyle="#ffffff",l.globalAlpha=.3*e.opacity,l.fillText(e.char,e.x,e.y),l.restore()),e.life>0&&e.opacity>.01)),t.current=requestAnimationFrame(v)},[]);return n.useEffect(()=>{if(e.current)return p(),document.addEventListener("mousemove",m),document.addEventListener("click",y),document.addEventListener("touchmove",h,{passive:!0}),document.addEventListener("touchstart",b,{passive:!0}),window.addEventListener("resize",p),t.current=requestAnimationFrame(v),()=>{document.removeEventListener("mousemove",m),document.removeEventListener("click",y),document.removeEventListener("touchmove",h),document.removeEventListener("touchstart",b),window.removeEventListener("resize",p),t.current&&cancelAnimationFrame(t.current)}},[p,m,y,h,b,v]),g.jsx("canvas",{ref:e,style:{position:"fixed",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none",zIndex:9999,mixBlendMode:"screen"}})},Xe=r`
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
@@ -930,7 +930,7 @@ import{d as e,r as t,a as n,m as r,R as a}from"./ui-DmH6xNGC.js";import{r as l,a
   animation: ${Xe} ${e=>4+e.delay}s ease-in-out infinite;
   animation-delay: ${e=>e.delay}s;
   user-select: none;
-`,et=n.memo(function(){return g.jsxs(Ge,{children:[[{size:20,left:10,top:20,delay:0},{size:15,left:80,top:30,delay:.5},{size:25,left:20,top:70,delay:1},{size:18,left:70,top:80,delay:1.5},{size:22,left:50,top:10,delay:2}].map((e,t)=>g.jsx(Je,{size:e.size,left:e.left,top:e.top,delay:e.delay},`element-${t}`)),[{symbol:"<div>",left:15,top:40,delay:.2},{symbol:"CSS",left:85,top:60,delay:.8},{symbol:"JS",left:75,top:15,delay:1.8},{symbol:"TS",left:40,top:25,delay:2.2},{symbol:"<JSX>",left:60,top:75,delay:2.6},{symbol:"[]",left:90,top:40,delay:3},{symbol:"()",left:25,top:60,delay:3.4}].map((e,t)=>g.jsx(Ze,{left:e.left,top:e.top,delay:e.delay,children:e.symbol},`symbol-${t}`))]})});function tt(){return g.jsxs(g.Fragment,{children:[g.jsx(et,{}),g.jsx(qe,{}),g.jsx(X,{}),g.jsx(de,{}),g.jsx(Me,{}),g.jsx(Ye,{})]})}e.div`
+`,et=n.memo(function(){return g.jsxs(Ge,{children:[[{size:20,left:10,top:20,delay:0},{size:15,left:80,top:30,delay:.5},{size:25,left:20,top:70,delay:1},{size:18,left:70,top:80,delay:1.5},{size:22,left:50,top:10,delay:2}].map((e,t)=>g.jsx(Je,{size:e.size,left:e.left,top:e.top,delay:e.delay},`element-${t}`)),[{symbol:"<div>",left:15,top:40,delay:.2},{symbol:"CSS",left:85,top:60,delay:.8},{symbol:"JS",left:75,top:15,delay:1.8},{symbol:"TS",left:40,top:25,delay:2.2},{symbol:"<JSX>",left:60,top:75,delay:2.6},{symbol:"[]",left:90,top:40,delay:3},{symbol:"()",left:25,top:60,delay:3.4}].map((e,t)=>g.jsx(Ze,{left:e.left,top:e.top,delay:e.delay,children:e.symbol},`symbol-${t}`))]})});function tt(){return g.jsxs(g.Fragment,{children:[g.jsx(et,{}),g.jsx(qe,{}),g.jsx(X,{}),g.jsx(de,{}),g.jsx(Ie,{}),g.jsx(Ye,{})]})}e.div`
   position: absolute;
   top: 0;
   left: 0;
