@@ -1,17 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../utils/colors';
 import { GitHubIcon } from './icons';
 
-const glowPulse = keyframes`
-  0%, 100% { 
-    box-shadow: 0 0 20px ${colors.utils.primaryAccent20}; 
-  }
-  50% { 
-    box-shadow: 0 0 40px ${colors.utils.primaryAccent30}; 
-  }
-`;
-
-const Card = styled.div<{ delay: number }>`
+const Card = styled.div`
   background: linear-gradient(
     135deg,
     ${colors.background.secondary} 0%,
@@ -21,14 +12,12 @@ const Card = styled.div<{ delay: number }>`
   padding: 2rem;
   border: 1px solid ${colors.utils.primaryAccent20};
   backdrop-filter: blur(10px);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation-delay: ${(props) => props.delay * 0.1}s;
-  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 
   &:hover {
     border-color: ${colors.accent.primary};
-    animation: ${glowPulse} 2s ease-in-out infinite;
+    box-shadow: 0 8px 32px ${colors.utils.primaryAccent20};
   }
 `;
 
@@ -45,8 +34,6 @@ const ProjectImage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
 
   &::before {
     content: '</>';
@@ -56,28 +43,9 @@ const ProjectImage = styled.div`
     font-family: 'Courier New', monospace;
     opacity: 0.3;
   }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      ${colors.utils.primaryAccent30},
-      transparent
-    );
-    transition: left 0.5s ease;
-  }
 `;
 
-const ProjectContent = styled.div`
-  position: relative;
-  z-index: 2;
-`;
+const ProjectContent = styled.div``;
 
 const ProjectTitle = styled.h3`
   color: ${colors.accent.primary};
@@ -117,7 +85,7 @@ const TechTag = styled.span`
   font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid ${colors.utils.primaryAccent30};
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 
   &:hover {
     background: linear-gradient(
@@ -144,28 +112,6 @@ const ProjectLink = styled.a`
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    transition: left 0.5s ease;
-  }
-
-  &:hover::before {
-    left: 100%;
-  }
 `;
 
 const LiveLink = styled(ProjectLink)`
@@ -209,12 +155,11 @@ interface Project {
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
 }
 
-function ProjectCard({ project, index }: ProjectCardProps) {
+function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card delay={index}>
+    <Card>
       <ProjectImage />
       <ProjectContent>
         <ProjectTitle>{project.title}</ProjectTitle>

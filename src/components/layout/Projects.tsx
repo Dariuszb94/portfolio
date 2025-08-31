@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SectionHeader from '../ui/SectionHeader';
 import ProjectCard from '../ui/ProjectCard';
@@ -5,7 +6,7 @@ import ProjectCard from '../ui/ProjectCard';
 const fadeInUp = keyframes`
   from { 
     opacity: 0; 
-    transform: translateY(50px); 
+    transform: translateY(30px); 
   }
   to { 
     opacity: 1; 
@@ -18,7 +19,6 @@ const ProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -40,7 +40,7 @@ const ProjectsGrid = styled.div`
 `;
 
 const ProjectsContainer = styled.div`
-  animation: ${fadeInUp} 0.8s ease-out;
+  animation: ${fadeInUp} 0.6s ease-out;
 `;
 
 interface Project {
@@ -53,6 +53,7 @@ interface Project {
   imageUrl?: string;
 }
 
+// Move projects data outside component to prevent re-creation on every render
 const projects: Project[] = [
   {
     id: 1,
@@ -90,7 +91,7 @@ const projects: Project[] = [
   },
 ];
 
-function Projects() {
+const Projects = React.memo(() => {
   return (
     <ProjectsSection id='projects'>
       <ProjectsContainer>
@@ -100,13 +101,15 @@ function Projects() {
         />
 
         <ProjectsGrid>
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </ProjectsGrid>
       </ProjectsContainer>
     </ProjectsSection>
   );
-}
+});
+
+Projects.displayName = 'Projects';
 
 export default Projects;
