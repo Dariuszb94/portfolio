@@ -259,7 +259,7 @@ const AnimatedScrollArrow: React.FC<AnimatedScrollArrowProps> = ({
         <SpinningRing />
         <OuterRing />
         <InnerGlow />
-        <ArrowButton>
+        <ArrowButton aria-label={`Scroll to ${targetId} section`}>
           <ArrowSvg
             viewBox='0 0 24 24'
             fill='none'
