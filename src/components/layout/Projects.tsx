@@ -107,7 +107,14 @@ const projects: Project[] = [
     title: 'Household Expenses',
     description:
       'Expense tracking application for managing household finances. Features expense categorization, monthly summaries, interactive charts, and local data persistence with Material-UI design.',
-    technologies: ['React', 'TypeScript', 'Material-UI', 'Chart.js', 'Jest', 'Vite'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Material-UI',
+      'Chart.js',
+      'Jest',
+      'Vite',
+    ],
     liveUrl: 'https://dariuszb94.github.io/Expenses/',
     githubUrl: 'https://github.com/Dariuszb94/Expenses',
     imageUrl: '/portfolio/images/expenses.jpg',
