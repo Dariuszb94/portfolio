@@ -70,7 +70,7 @@ const projects: Project[] = [
     ],
     liveUrl: 'https://dariuszb94.github.io/Lux-cars/',
     githubUrl: 'https://github.com/Dariuszb94/Lux-cars',
-    imageUrl: '/portfolio/images/car-dealer.jpg',
+    imageUrl: '/images/car-dealer.jpg',
   },
   {
     id: 2,
@@ -80,7 +80,7 @@ const projects: Project[] = [
     technologies: ['React', 'Hooks', 'SCSS', 'Jest', 'Enzyme', 'Email.js'],
     liveUrl: 'https://dariuszb94.github.io/translations/#/',
     githubUrl: 'https://github.com/Dariuszb94/translations/tree/master',
-    imageUrl: '/portfolio/images/translations.jpg',
+    imageUrl: '/images/translations.jpg',
   },
   {
     id: 3,
@@ -90,7 +90,7 @@ const projects: Project[] = [
     technologies: ['Vue', 'JavaScript', 'CSS3', 'HTML5', 'Firebase'],
     liveUrl: 'https://dariuszb94.github.io/vue-quiz/',
     githubUrl: 'https://github.com/Dariuszb94/vue-quiz',
-    imageUrl: '/portfolio/images/vue-quiz.jpg',
+    imageUrl: '/images/vue-quiz.jpg',
   },
   {
     id: 4,
@@ -100,7 +100,7 @@ const projects: Project[] = [
     technologies: ['Vue', 'Vuex', 'JavaScript', 'CSS3'],
     liveUrl: 'https://dariuszb94.github.io/cloth-shop/',
     githubUrl: 'https://github.com/Dariuszb94/cloth-shop',
-    imageUrl: '/portfolio/images/cloth-shop.jpg',
+    imageUrl: '/images/cloth-shop.jpg',
   },
   {
     id: 5,
@@ -117,7 +117,7 @@ const projects: Project[] = [
     ],
     liveUrl: 'https://dariuszb94.github.io/Expenses/',
     githubUrl: 'https://github.com/Dariuszb94/Expenses',
-    imageUrl: '/portfolio/images/expenses.jpg',
+    imageUrl: '/images/expenses.jpg',
   },
 ];
 
