@@ -53,7 +53,6 @@ interface Project {
   imageUrl?: string;
 }
 
-// Move projects data outside component to prevent re-creation on every render
 const projects: Project[] = [
   {
     id: 1,
